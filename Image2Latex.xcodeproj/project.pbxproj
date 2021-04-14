@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */; };
+		F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */; };
+		F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */; };
+		F87DAC0E26247D4B00187BD7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0D26247D4B00187BD7 /* Persistence.swift */; };
+		F895A26E262350A5005800DA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895A26D262350A5005800DA /* CodeView.swift */; };
+		F895A272262350CE005800DA /* LaTeXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895A271262350CE005800DA /* LaTeXView.swift */; };
+		F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177B262307C2008CCFB3 /* ContentView.swift */; };
+		F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177E262309BA008CCFB3 /* SettingsView.swift */; };
+		F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2178626233CA7008CCFB3 /* HistoryView.swift */; };
+		F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */; };
+		F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A8261E997B000F35BD /* ImageView.swift */; };
+		F8FE54AB261E997C000F35BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FE54AA261E997C000F35BD /* Assets.xcassets */; };
+		F8FE54AE261E997C000F35BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FE54AD261E997C000F35BD /* Preview Assets.xcassets */; };
+		F8FE54B8261E99D3000F35BD /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = F8FE54B7261E99D3000F35BD /* SwiftUIX */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonView.swift; sourceTree = "<group>"; };
+		F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		F87DAC0726247C4000187BD7 /* Image2Latex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Image2Latex.xcdatamodel; sourceTree = "<group>"; };
+		F87DAC0D26247D4B00187BD7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		F895A26D262350A5005800DA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		F895A271262350CE005800DA /* LaTeXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXView.swift; sourceTree = "<group>"; };
+		F8B2177B262307C2008CCFB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F8B2177E262309BA008CCFB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F8B2178626233CA7008CCFB3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		F8FE54A3261E997B000F35BD /* Image2Latex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Image2Latex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image2LatexApp.swift; sourceTree = "<group>"; };
+		F8FE54A8261E997B000F35BD /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		F8FE54AA261E997C000F35BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8FE54AD261E997C000F35BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8FE54AF261E997C000F35BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8FE54A0261E997B000F35BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8FE54B8261E99D3000F35BD /* SwiftUIX in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F818E8C02622C289001CC72D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F895A26C2623507C005800DA /* ComponentVIew */,
+				F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */,
+				F8FE54A8261E997B000F35BD /* ImageView.swift */,
+				F8B2177E262309BA008CCFB3 /* SettingsView.swift */,
+				F8B2178626233CA7008CCFB3 /* HistoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F822EEB2261ED56F00EAB2AF /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F895A26C2623507C005800DA /* ComponentVIew */ = {
+			isa = PBXGroup;
+			children = (
+				F895A26D262350A5005800DA /* CodeView.swift */,
+				F895A271262350CE005800DA /* LaTeXView.swift */,
+			);
+			path = ComponentVIew;
+			sourceTree = "<group>";
+		};
+		F8FE549A261E997B000F35BD = {
+			isa = PBXGroup;
+			children = (
+				F8FE54A5261E997B000F35BD /* Image2Latex */,
+				F8FE54A4261E997B000F35BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8FE54A4261E997B000F35BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8FE54A3261E997B000F35BD /* Image2Latex.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8FE54A5261E997B000F35BD /* Image2Latex */ = {
+			isa = PBXGroup;
+			children = (
+				F818E8C02622C289001CC72D /* View */,
+				F822EEB2261ED56F00EAB2AF /* View Model */,
+				F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */,
+				F8B2177B262307C2008CCFB3 /* ContentView.swift */,
+				F8FE54AA261E997C000F35BD /* Assets.xcassets */,
+				F8FE54AF261E997C000F35BD /* Info.plist */,
+				F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */,
+				F87DAC0D26247D4B00187BD7 /* Persistence.swift */,
+				F8FE54AC261E997C000F35BD /* Preview Content */,
+			);
+			path = Image2Latex;
+			sourceTree = "<group>";
+		};
+		F8FE54AC261E997C000F35BD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F8FE54AD261E997C000F35BD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8FE54A2261E997B000F35BD /* Image2Latex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8FE54B2261E997C000F35BD /* Build configuration list for PBXNativeTarget "Image2Latex" */;
+			buildPhases = (
+				F8FE549F261E997B000F35BD /* Sources */,
+				F8FE54A0261E997B000F35BD /* Frameworks */,
+				F8FE54A1261E997B000F35BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Image2Latex;
+			packageProductDependencies = (
+				F8FE54B7261E99D3000F35BD /* SwiftUIX */,
+			);
+			productName = Image2Latex;
+			productReference = F8FE54A3261E997B000F35BD /* Image2Latex.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8FE549B261E997B000F35BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					F8FE54A2261E997B000F35BD = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = F8FE549E261E997B000F35BD /* Build configuration list for PBXProject "Image2Latex" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8FE549A261E997B000F35BD;
+			packageReferences = (
+				F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
+			productRefGroup = F8FE54A4261E997B000F35BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8FE54A2261E997B000F35BD /* Image2Latex */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8FE54A1261E997B000F35BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8FE54AE261E997C000F35BD /* Preview Assets.xcassets in Resources */,
+				F8FE54AB261E997C000F35BD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8FE549F261E997B000F35BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */,
+				F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */,
+				F87DAC0E26247D4B00187BD7 /* Persistence.swift in Sources */,
+				F895A272262350CE005800DA /* LaTeXView.swift in Sources */,
+				F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */,
+				F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */,
+				F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */,
+				F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */,
+				F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */,
+				F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */,
+				F895A26E262350A5005800DA /* CodeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F8FE54B0261E997C000F35BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8FE54B1261E997C000F35BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8FE54B3261E997C000F35BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Image2Latex/Preview Content\"";
+				DEVELOPMENT_TEAM = DSW9SHB8GP;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Image2Latex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.butanediol.Image2Latex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8FE54B4261E997C000F35BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Image2Latex/Preview Content\"";
+				DEVELOPMENT_TEAM = DSW9SHB8GP;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Image2Latex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.butanediol.Image2Latex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8FE549E261E997B000F35BD /* Build configuration list for PBXProject "Image2Latex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FE54B0261E997C000F35BD /* Debug */,
+				F8FE54B1261E997C000F35BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8FE54B2261E997C000F35BD /* Build configuration list for PBXNativeTarget "Image2Latex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FE54B3261E997C000F35BD /* Debug */,
+				F8FE54B4261E997C000F35BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8FE54B7261E99D3000F35BD /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F87DAC0726247C4000187BD7 /* Image2Latex.xcdatamodel */,
+			);
+			currentVersion = F87DAC0726247C4000187BD7 /* Image2Latex.xcdatamodel */;
+			path = Image2Latex.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F8FE549B261E997B000F35BD /* Project object */;
+}
