@@ -18,34 +18,34 @@ struct HistoryView: View {
     private var historyImages: FetchedResults<HistoryImage>
     
     @State var searchText: String?
+    @State private var selectedHistoryImage: HistoryImage?
     @State var isEditing: Bool = false
-    @State var showDetail: Bool = false
     
     let list = 0..<100
     
     var body: some View {
-//        List(list.filter { searchText == nil ? true : String($0).contains(searchText!) }, id: \.self) { item in
-//            Text("Item \(item)")
-//        }
         List {
             ForEach(historyImages.filter {
                 searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
             } ) { image in
-                Image(data: image.imageData!)?.resizable().scaledToFit()
+                Image(data: image.imageData!)?.resizable().scaledToFit().frame(height: 80)
                     .onTapGesture {
-                        showDetail = true
-                    }
-                    .sheet(isPresented: $showDetail) {
-                        NavigationView {
-                            ScrollView {
-                                Image(data: image.imageData!)?.resizable().scaledToFit()
-                                Text("还没写，别着急")
-                            }
-                            .navigationBarTitle(dateFormatter.string(from: image.timestamp ?? Date()), displayMode: .inline)
-                        }
+                        selectedHistoryImage = image
+                        print("Date: \(dateFormatter.string(from: image.timestamp!))")
                     }
             }
             .onDelete(perform: deleteHistory)
+            .sheet(item: $selectedHistoryImage) { image in
+                NavigationView {
+                    VStack {
+                        Image(data: image.imageData!)?.resizable().scaledToFit()
+                        Text("还没写，别着急")
+                        Spacer()
+                    }
+                    .toolbar { Button("Done") { selectedHistoryImage = nil } }
+                    .navigationBarTitle(dateFormatter.string(from: image.timestamp!), displayMode: .inline)
+                }
+            }
         }
         .navigationSearchBar{
             SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
@@ -76,7 +76,7 @@ struct HistoryView: View {
     
 }
 
-private let dateFormatter: DateFormatter = {
+let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .medium

@@ -18,20 +18,19 @@ struct ImageView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            if (viewModel.imageData == nil || true) {
-                // Image not loaded
-                Button(action: {
-                    self.selectImage = true
-                }) {
-                    AddImageButtonView()
-                        .opacity(viewModel.imageData == nil ? 1 : 0)
-                        .scaleEffect(x: viewModel.imageData == nil ? 1 : 0, y: viewModel.imageData == nil ? 1 : 0)
-                        .frame(maxWidth: viewModel.imageData == nil ? .infinity : 0, maxHeight: viewModel.imageData == nil ? .infinity : 0)
-                }.sheet(isPresented: $selectImage, content: {
-                    ImagePicker(data: $viewModel.imageData, encoding: .png)
-                })
+
+            // Image not loaded
+            Button(action: {
+                self.selectImage = true
+            }) {
+                AddImageButtonView()
+                    .opacity(viewModel.imageData == nil ? 1 : 0)
+                    .scaleEffect(x: viewModel.imageData == nil ? 1 : 0, y: viewModel.imageData == nil ? 1 : 0)
+                    .frame(maxWidth: viewModel.imageData == nil ? .infinity : 0, maxHeight: viewModel.imageData == nil ? .infinity : 0)
+            }.sheet(isPresented: $selectImage) {
+                ImagePicker(data: $viewModel.imageData, encoding: .png)
             }
-            
+
             if let imageData = viewModel.imageData { // Image loaded
                 Spacer()
                 

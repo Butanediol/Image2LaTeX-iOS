@@ -5,6 +5,7 @@
 ## TODO:
 
 - [x] Basic image process
+- [ ] History
 - [ ] Image cropping
 - [ ] LaTeX preview
 - [ ] Advanced image process options (i.e. request parameters)

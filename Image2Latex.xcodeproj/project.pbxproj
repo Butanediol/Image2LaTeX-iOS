@@ -16,6 +16,7 @@
 		F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177B262307C2008CCFB3 /* ContentView.swift */; };
 		F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177E262309BA008CCFB3 /* SettingsView.swift */; };
 		F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2178626233CA7008CCFB3 /* HistoryView.swift */; };
+		F8D8D0A82627CE4E00FE4CB0 /* CropImageView in Frameworks */ = {isa = PBXBuildFile; productRef = F8D8D0A72627CE4E00FE4CB0 /* CropImageView */; };
 		F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */; };
 		F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A8261E997B000F35BD /* ImageView.swift */; };
 		F8FE54AB261E997C000F35BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FE54AA261E997C000F35BD /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FE54B8261E99D3000F35BD /* SwiftUIX in Frameworks */,
+				F8D8D0A82627CE4E00FE4CB0 /* CropImageView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +142,7 @@
 			name = Image2Latex;
 			packageProductDependencies = (
 				F8FE54B7261E99D3000F35BD /* SwiftUIX */,
+				F8D8D0A72627CE4E00FE4CB0 /* CropImageView */,
 			);
 			productName = Image2Latex;
 			productReference = F8FE54A3261E997B000F35BD /* Image2Latex.app */;
@@ -170,6 +173,7 @@
 			mainGroup = F8FE549A261E997B000F35BD;
 			packageReferences = (
 				F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				F8D8D0A62627CE4E00FE4CB0 /* XCRemoteSwiftPackageReference "CropImageView" */,
 			);
 			productRefGroup = F8FE54A4261E997B000F35BD /* Products */;
 			projectDirPath = "";
@@ -398,6 +402,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F8D8D0A62627CE4E00FE4CB0 /* XCRemoteSwiftPackageReference "CropImageView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zhxf2012/CropImageView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 		F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
@@ -409,6 +421,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F8D8D0A72627CE4E00FE4CB0 /* CropImageView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8D8D0A62627CE4E00FE4CB0 /* XCRemoteSwiftPackageReference "CropImageView" */;
+			productName = CropImageView;
+		};
 		F8FE54B7261E99D3000F35BD /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */;

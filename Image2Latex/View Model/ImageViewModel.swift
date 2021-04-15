@@ -89,6 +89,7 @@ class imageViewModel: ObservableObject {
             let newHistoryImage = HistoryImage(context: context)
             newHistoryImage.imageData = imageData
             newHistoryImage.timestamp = Date()
+            print("Date\(dateFormatter.string(from: newHistoryImage.timestamp!))")
             
             do {
                 try context.save()
