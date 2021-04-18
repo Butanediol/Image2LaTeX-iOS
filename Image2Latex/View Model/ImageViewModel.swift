@@ -8,21 +8,17 @@
 import SwiftUI
 import CoreData
 
-struct Settings {
-    var app_id = UserDefaults.standard.string(forKey: "Settings.app_id") ?? ""
-    var app_key = UserDefaults.standard.string(forKey: "Settings.app_key") ?? ""
-}
-
 class imageViewModel: ObservableObject {
     
-//    @Published var imageData: Data?
     @Published var imageData: UIImage?
     @Published var response: Response?
     @Published var isLoading = false
     
-    var mySettings = Settings()
-    
     func processImageV2(context: NSManagedObjectContext) {
+        
+        // API Settings
+        let app_id = UserDefaults.standard.string(forKey: "Settings.app_id") ?? ""
+        let app_key = UserDefaults.standard.string(forKey: "Settings.app_key") ?? ""
         
         DispatchQueue.main.async {
             self.isLoading = true
@@ -33,8 +29,8 @@ class imageViewModel: ObservableObject {
         request.httpMethod = "POST"
 
         // Headers
-        request.addValue(mySettings.app_id, forHTTPHeaderField: "app_id")
-        request.addValue(mySettings.app_key, forHTTPHeaderField: "app_key")
+        request.addValue(app_id, forHTTPHeaderField: "app_id")
+        request.addValue(app_key, forHTTPHeaderField: "app_key")
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         
         //JSON Body
@@ -48,16 +44,42 @@ class imageViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     do {
                         self.response = try JSONDecoder().decode(Response.self, from: data)
-                        print("[Response]: \(self.response!)")
-                        self.response!.saveAsHistory(imageData: self.imageData!.pngData()!, context: context)
+                        self.saveAsHistory(imageData: self.imageData!.pngData()!, response: self.response,context: context)
                     } catch {
-                        print(error)
+                        fatalError("Unresolved Error: \(error as NSError)")
                     }
                     self.isLoading = false
                 }
             }
         }
         task.resume()
+    }
+    
+    func saveAsHistory(imageData: Data, response: Response?, context: NSManagedObjectContext) {
+        
+        guard let response = response else { return }
+        
+        let newHistoryImage = HistoryImage(context: context)
+        newHistoryImage.imageData = imageData
+        newHistoryImage.timestamp = Date()
+        
+        if let html = response.html {
+            newHistoryImage.html = html
+        }
+        
+        if let latex = response.latex_styled {
+            newHistoryImage.latex = latex
+        }
+        
+        if let text = response.text {
+            newHistoryImage.text = text
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            fatalError("Unresolved error: \(error as NSError)")
+        }
     }
     
     struct Response: Codable {
@@ -84,20 +106,6 @@ class imageViewModel: ObservableObject {
             var id: String
             var message: String
             var detail: String?
-        }
-        
-        func saveAsHistory(imageData: Data, context: NSManagedObjectContext) {
-            let newHistoryImage = HistoryImage(context: context)
-            newHistoryImage.imageData = imageData
-            newHistoryImage.timestamp = Date()
-            print("Date\(dateFormatter.string(from: newHistoryImage.timestamp!))")
-            
-            do {
-                try context.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
         }
     }
 }

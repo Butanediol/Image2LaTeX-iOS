@@ -12,22 +12,24 @@ struct SettingsView: View {
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
-    @State var mySettings = Settings()
-    
+    // View States
     @State var showSafari = false
+    
+    @State var app_id = UserDefaults.standard.string(forKey: "Settings.app_id") ?? ""
+    @State var app_key = UserDefaults.standard.string(forKey: "Settings.app_key") ?? ""
     
     var body: some View {
         List {
             Section(header: Text("API")) {
                 HStack { // API ID
                     Text("App ID")
-                    TextField("ID", text: $mySettings.app_id)
+                    TextField("ID", text: $app_id)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                         .lineLimit(1)
                         .multilineTextAlignment(.trailing)
                         .font(.system(.body, design: .monospaced))
-                        .onChange(of: mySettings.app_id) { app_id in
+                        .onChange(of: app_id) { app_id in
                             print(app_id)
                             UserDefaults.standard.set(app_id, forKey: "Settings.app_id")
                         }
@@ -35,13 +37,13 @@ struct SettingsView: View {
                 
                 HStack { // API Key
                     Text("App Key")
-                    TextField("Key", text: $mySettings.app_key)
+                    TextField("Key", text: $app_key)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                         .lineLimit(1)
                         .multilineTextAlignment(.trailing)
                         .font(.system(.body, design: .monospaced))
-                        .onChange(of: mySettings.app_key) { app_key in
+                        .onChange(of: app_key) { app_key in
                             print(app_key)
                             UserDefaults.standard.set(app_key, forKey: "Settings.app_key")
                         }

@@ -12,16 +12,14 @@ import CoreData
 struct HistoryView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \HistoryImage.timestamp, ascending: true)],
                   animation: .easeInOut)
     private var historyImages: FetchedResults<HistoryImage>
     
+    // View States
     @State var searchText: String?
     @State private var selectedHistoryImage: HistoryImage?
     @State var isEditing: Bool = false
-    
-    let list = 0..<100
     
     var body: some View {
         List {
