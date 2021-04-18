@@ -26,7 +26,7 @@ struct HistoryView: View {
             ForEach(historyImages.filter {
                 searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
             } ) { image in
-                Image(data: image.imageData!)?.resizable().scaledToFit().frame(height: 200)
+                Image(data: image.imageData!)?.resizable().scaledToFill().frame(width: 50, height: 50)
                     .onTapGesture {
                         selectedHistoryImage = image
                         print("Date: \(dateFormatter.string(from: image.timestamp!))")
@@ -82,7 +82,6 @@ struct HistoryView: View {
             }
         }
     }
-    
 }
 
 let dateFormatter: DateFormatter = {

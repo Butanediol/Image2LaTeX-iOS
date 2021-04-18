@@ -10,7 +10,7 @@ import CoreData
 
 class imageViewModel: ObservableObject {
     
-    @Published var imageData: UIImage?
+    @Published var image: UIImage?
     @Published var response: Response?
     @Published var isLoading = false
     
@@ -35,7 +35,7 @@ class imageViewModel: ObservableObject {
         
         //JSON Body
         let bodyObject: [String : Any] = [
-            "src": "data:image/png;base64,\(imageData?.pngData()?.base64EncodedString() ?? "")"
+            "src": "data:image/png;base64,\(image?.pngData()?.base64EncodedString() ?? "")"
         ]
         request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
         
@@ -44,7 +44,7 @@ class imageViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     do {
                         self.response = try JSONDecoder().decode(Response.self, from: data)
-                        self.saveAsHistory(imageData: self.imageData!.pngData()!, response: self.response,context: context)
+                        self.saveAsHistory(imageData: self.image!.pngData()!, response: self.response,context: context)
                     } catch {
                         fatalError("Unresolved Error: \(error as NSError)")
                     }

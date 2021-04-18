@@ -25,14 +25,14 @@ struct ImageView: View {
                 self.selectImage = true
             }) {
                 AddImageButtonView()
-                    .opacity(viewModel.imageData == nil ? 1 : 0)
-                    .scaleEffect(x: viewModel.imageData == nil ? 1 : 0, y: viewModel.imageData == nil ? 1 : 0)
-                    .frame(maxWidth: viewModel.imageData == nil ? .infinity : 0, maxHeight: viewModel.imageData == nil ? .infinity : 0)
+                    .opacity(viewModel.image == nil ? 1 : 0)
+                    .scaleEffect(x: viewModel.image == nil ? 1 : 0, y: viewModel.image == nil ? 1 : 0)
+                    .frame(maxWidth: viewModel.image == nil ? .infinity : 0, maxHeight: viewModel.image == nil ? .infinity : 0)
             }.sheet(isPresented: $selectImage, onDismiss: {cropImage = true}) {
-                ImagePicker(image: $viewModel.imageData)
+                ImagePicker(image: $viewModel.image)
             }
             
-            if let imageData = viewModel.imageData { // Image loaded
+            if let imageData = viewModel.image { // Image loaded
                 Spacer()
                 
                 Image(uiImage: imageData)
@@ -42,10 +42,10 @@ struct ImageView: View {
                     .shadow(color: Color(hexadecimal: "d3d3d3"), radius: dropShadowRadius, x: 0, y: 0)
                     .frame(maxHeight: viewModel.isLoading || viewModel.response != nil ? 200 : 400)
                     .onTapGesture { cropImage.toggle() }
-                    .fullScreenCover(isPresented: $cropImage) {
-                        MantisController(image: viewModel.imageData!, showView: $cropImage) { image in
+                    .fullScreenCover(isPresented: $cropImage) { // If requesting, ban cropping
+                        MantisController(image: viewModel.image!, showView: $cropImage) { image in
                             if let image = image {
-                                viewModel.imageData = image
+                                viewModel.image = image
                             }
                         }
                         .edgesIgnoringSafeArea(.vertical)
@@ -81,7 +81,7 @@ struct ImageView: View {
                 HStack {
                     if (!viewModel.isLoading) { // Request not finished.
                         Button(action: {
-                            viewModel.imageData = nil
+                            viewModel.image = nil
                             viewModel.response = nil
                         }) {
                             Text("Remove")
