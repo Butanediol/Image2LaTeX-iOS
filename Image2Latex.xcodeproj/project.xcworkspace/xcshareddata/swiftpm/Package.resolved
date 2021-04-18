@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "CropImageView",
-        "repositoryURL": "https://github.com/zhxf2012/CropImageView",
+        "package": "Mantis",
+        "repositoryURL": "https://github.com/guoyingtao/Mantis",
         "state": {
           "branch": null,
-          "revision": "709cbea460d9fa8f3fa61e2c6fa5af10b7241152",
-          "version": "0.2.0"
+          "revision": "d722a58f80c87b3324739548a99767f100c88e1a",
+          "version": "1.6.0"
         }
       },
       {

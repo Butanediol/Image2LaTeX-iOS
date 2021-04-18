@@ -6,19 +6,20 @@
 //
 
 import SwiftUI
-import SwiftUIX
+//import SwiftUIX
 
 struct ImageView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @ObservedObject var viewModel = imageViewModel()
     @State private var selectImage = false
+    @State private var cropImage = false
     
     let dropShadowRadius: CGFloat = 2.0
     
     var body: some View {
         VStack(spacing: 8) {
-
+            
             // Image not loaded
             Button(action: {
                 self.selectImage = true
@@ -27,20 +28,28 @@ struct ImageView: View {
                     .opacity(viewModel.imageData == nil ? 1 : 0)
                     .scaleEffect(x: viewModel.imageData == nil ? 1 : 0, y: viewModel.imageData == nil ? 1 : 0)
                     .frame(maxWidth: viewModel.imageData == nil ? .infinity : 0, maxHeight: viewModel.imageData == nil ? .infinity : 0)
-            }.sheet(isPresented: $selectImage) {
-                ImagePicker(data: $viewModel.imageData, encoding: .png)
+            }.sheet(isPresented: $selectImage, onDismiss: {cropImage = true}) {
+                ImagePicker(image: $viewModel.imageData)
             }
-
+            
             if let imageData = viewModel.imageData { // Image loaded
                 Spacer()
                 
-                Image(data: imageData)!
+                Image(uiImage: imageData)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(10)
                     .shadow(color: Color(hexadecimal: "d3d3d3"), radius: dropShadowRadius, x: 0, y: 0)
                     .frame(maxHeight: viewModel.isLoading || viewModel.response != nil ? 200 : 400)
-                
+                    .onTapGesture { cropImage.toggle() }
+                    .fullScreenCover(isPresented: $cropImage) {
+                        MantisController(image: viewModel.imageData!, showView: $cropImage) { image in
+                            if let image = image {
+                                viewModel.imageData = image
+                            }
+                        }
+                        .edgesIgnoringSafeArea(.vertical)
+                    }
                 Spacer()
                 
                 // Loading
@@ -95,6 +104,41 @@ struct ImageView: View {
         }
         .padding()
         .animation(.spring())
+        .navigationBarHidden(true)
+    }
+}
+
+struct ImagePicker: UIViewControllerRepresentable {
+    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        let parent: ImagePicker
+
+        init(_ parent: ImagePicker) {
+            self.parent = parent
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let uiImage = info[.originalImage] as? UIImage {
+                parent.image = uiImage
+            }
+
+            parent.presentationMode.wrappedValue.dismiss()
+        }
     }
     
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var image: UIImage?
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
+        return picker
+    }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+
+    }
 }

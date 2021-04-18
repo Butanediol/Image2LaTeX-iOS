@@ -13,16 +13,31 @@
 		F87DAC0E26247D4B00187BD7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0D26247D4B00187BD7 /* Persistence.swift */; };
 		F895A26E262350A5005800DA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895A26D262350A5005800DA /* CodeView.swift */; };
 		F895A272262350CE005800DA /* LaTeXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895A271262350CE005800DA /* LaTeXView.swift */; };
+		F8AAF702262BEA1D00DD0095 /* Mantis in Frameworks */ = {isa = PBXBuildFile; productRef = F8AAF701262BEA1D00DD0095 /* Mantis */; };
+		F8AAF705262BEA4B00DD0095 /* ImageCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */; };
+		F8AAF708262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AAF707262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift */; };
 		F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177B262307C2008CCFB3 /* ContentView.swift */; };
 		F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177E262309BA008CCFB3 /* SettingsView.swift */; };
 		F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2178626233CA7008CCFB3 /* HistoryView.swift */; };
-		F8D8D0A82627CE4E00FE4CB0 /* CropImageView in Frameworks */ = {isa = PBXBuildFile; productRef = F8D8D0A72627CE4E00FE4CB0 /* CropImageView */; };
 		F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */; };
 		F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A8261E997B000F35BD /* ImageView.swift */; };
 		F8FE54AB261E997C000F35BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FE54AA261E997C000F35BD /* Assets.xcassets */; };
 		F8FE54AE261E997C000F35BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FE54AD261E997C000F35BD /* Preview Assets.xcassets */; };
 		F8FE54B8261E99D3000F35BD /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = F8FE54B7261E99D3000F35BD /* SwiftUIX */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8AAF6FF262BE98500DD0095 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonView.swift; sourceTree = "<group>"; };
@@ -31,6 +46,8 @@
 		F87DAC0D26247D4B00187BD7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F895A26D262350A5005800DA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		F895A271262350CE005800DA /* LaTeXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXView.swift; sourceTree = "<group>"; };
+		F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperView.swift; sourceTree = "<group>"; };
+		F8AAF707262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modal+DisableDragToDismiss.swift"; sourceTree = "<group>"; };
 		F8B2177B262307C2008CCFB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8B2177E262309BA008CCFB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F8B2178626233CA7008CCFB3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -47,8 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8AAF702262BEA1D00DD0095 /* Mantis in Frameworks */,
 				F8FE54B8261E99D3000F35BD /* SwiftUIX in Frameworks */,
-				F8D8D0A82627CE4E00FE4CB0 /* CropImageView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +97,17 @@
 			children = (
 				F895A26D262350A5005800DA /* CodeView.swift */,
 				F895A271262350CE005800DA /* LaTeXView.swift */,
+				F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */,
 			);
 			path = ComponentVIew;
+			sourceTree = "<group>";
+		};
+		F8AAF706262BEDEB00DD0095 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F8AAF707262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		F8FE549A261E997B000F35BD = {
@@ -103,6 +129,7 @@
 		F8FE54A5261E997B000F35BD /* Image2Latex */ = {
 			isa = PBXGroup;
 			children = (
+				F8AAF706262BEDEB00DD0095 /* Extension */,
 				F818E8C02622C289001CC72D /* View */,
 				F822EEB2261ED56F00EAB2AF /* View Model */,
 				F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */,
@@ -134,6 +161,7 @@
 				F8FE549F261E997B000F35BD /* Sources */,
 				F8FE54A0261E997B000F35BD /* Frameworks */,
 				F8FE54A1261E997B000F35BD /* Resources */,
+				F8AAF6FF262BE98500DD0095 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,7 +170,7 @@
 			name = Image2Latex;
 			packageProductDependencies = (
 				F8FE54B7261E99D3000F35BD /* SwiftUIX */,
-				F8D8D0A72627CE4E00FE4CB0 /* CropImageView */,
+				F8AAF701262BEA1D00DD0095 /* Mantis */,
 			);
 			productName = Image2Latex;
 			productReference = F8FE54A3261E997B000F35BD /* Image2Latex.app */;
@@ -173,7 +201,7 @@
 			mainGroup = F8FE549A261E997B000F35BD;
 			packageReferences = (
 				F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */,
-				F8D8D0A62627CE4E00FE4CB0 /* XCRemoteSwiftPackageReference "CropImageView" */,
+				F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */,
 			);
 			productRefGroup = F8FE54A4261E997B000F35BD /* Products */;
 			projectDirPath = "";
@@ -203,12 +231,14 @@
 			files = (
 				F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */,
 				F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */,
+				F8AAF705262BEA4B00DD0095 /* ImageCropperView.swift in Sources */,
 				F87DAC0E26247D4B00187BD7 /* Persistence.swift in Sources */,
 				F895A272262350CE005800DA /* LaTeXView.swift in Sources */,
 				F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */,
 				F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */,
 				F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */,
 				F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */,
+				F8AAF708262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift in Sources */,
 				F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */,
 				F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */,
 				F895A26E262350A5005800DA /* CodeView.swift in Sources */,
@@ -402,12 +432,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F8D8D0A62627CE4E00FE4CB0 /* XCRemoteSwiftPackageReference "CropImageView" */ = {
+		F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/zhxf2012/CropImageView";
+			repositoryURL = "https://github.com/guoyingtao/Mantis";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 1.6.0;
 			};
 		};
 		F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
@@ -421,10 +451,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F8D8D0A72627CE4E00FE4CB0 /* CropImageView */ = {
+		F8AAF701262BEA1D00DD0095 /* Mantis */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F8D8D0A62627CE4E00FE4CB0 /* XCRemoteSwiftPackageReference "CropImageView" */;
-			productName = CropImageView;
+			package = F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */;
+			productName = Mantis;
 		};
 		F8FE54B7261E99D3000F35BD /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;

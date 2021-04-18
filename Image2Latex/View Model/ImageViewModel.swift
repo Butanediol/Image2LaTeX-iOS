@@ -5,7 +5,7 @@
 //  Created by Butanediol on 8/4/2021.
 //
 
-import Foundation
+import SwiftUI
 import CoreData
 
 struct Settings {
@@ -15,7 +15,8 @@ struct Settings {
 
 class imageViewModel: ObservableObject {
     
-    @Published var imageData: Data?
+//    @Published var imageData: Data?
+    @Published var imageData: UIImage?
     @Published var response: Response?
     @Published var isLoading = false
     
@@ -38,7 +39,7 @@ class imageViewModel: ObservableObject {
         
         //JSON Body
         let bodyObject: [String : Any] = [
-            "src": "data:image/png;base64,\(imageData!.base64EncodedString())"
+            "src": "data:image/png;base64,\(imageData?.pngData()?.base64EncodedString() ?? "")"
         ]
         request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
         
@@ -48,7 +49,7 @@ class imageViewModel: ObservableObject {
                     do {
                         self.response = try JSONDecoder().decode(Response.self, from: data)
                         print("[Response]: \(self.response!)")
-                        self.response!.saveAsHistory(imageData: self.imageData!, context: context)
+                        self.response!.saveAsHistory(imageData: self.imageData!.pngData()!, context: context)
                     } catch {
                         print(error)
                     }

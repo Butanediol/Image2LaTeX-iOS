@@ -6,7 +6,7 @@
 
 - [x] Basic image process
 - [ ] History
-- [ ] Image cropping
+- [x] Image cropping
 - [ ] LaTeX preview
 - [ ] Advanced image process options (i.e. request parameters)
 - [ ] Multiple API keys (multiple accounts)

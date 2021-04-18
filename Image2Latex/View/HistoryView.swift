@@ -28,7 +28,7 @@ struct HistoryView: View {
             ForEach(historyImages.filter {
                 searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
             } ) { image in
-                Image(data: image.imageData!)?.resizable().scaledToFit().frame(height: 80)
+                Image(data: image.imageData!)?.resizable().scaledToFit().frame(height: 200)
                     .onTapGesture {
                         selectedHistoryImage = image
                         print("Date: \(dateFormatter.string(from: image.timestamp!))")
@@ -40,6 +40,17 @@ struct HistoryView: View {
                     VStack {
                         Image(data: image.imageData!)?.resizable().scaledToFit()
                         Text("还没写，别着急")
+                        Button("Delete") {
+                            selectedHistoryImage = nil
+                            viewContext.delete(image)
+                            do {
+                                try viewContext.save()
+                            } catch {
+                                fatalError("Fatal Error: \(error as NSError)")
+                            }
+                        }
+                        .foregroundColor(.red)
+                        .padding()
                         Spacer()
                     }
                     .toolbar { Button("Done") { selectedHistoryImage = nil } }
