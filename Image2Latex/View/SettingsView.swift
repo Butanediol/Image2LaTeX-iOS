@@ -17,10 +17,11 @@ struct SettingsView: View {
     
     @State var app_id = UserDefaults.standard.string(forKey: "Settings.app_id") ?? ""
     @State var app_key = UserDefaults.standard.string(forKey: "Settings.app_key") ?? ""
+    @State var statistics_total = UserDefaults.standard.string(forKey: "Settings.statistics.total") ?? "0"
     
     var body: some View {
         List {
-            Section(header: Text("API")) {
+            Section(header: Text("API"), footer: Text("To get an API Token")) {
                 HStack { // API ID
                     Text("App ID")
                     TextField("ID", text: $app_id)
@@ -56,8 +57,23 @@ struct SettingsView: View {
                     SafariView(url: URL(string: "https://accounts.mathpix.com/ocr-api")!)
                 }
             }
+            
+            Section(header: Text("Statistics")) {
+                HStack {
+                    Text("Total")
+                    Spacer()
+                    Text(statistics_total)
+                }
+            }
         }
         .listStyle(InsetGroupedListStyle())
+        .onAppear{ refreshSettingsData() }
+    }
+    
+    func refreshSettingsData() {
+        self.app_id = UserDefaults.standard.string(forKey: "Settings.app_id") ?? ""
+        self.app_key = UserDefaults.standard.string(forKey: "Settings.app_key") ?? ""
+        self.statistics_total = UserDefaults.standard.string(forKey: "Settings.statistics.total") ?? "0"
     }
 }
 

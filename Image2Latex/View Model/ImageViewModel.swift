@@ -40,6 +40,7 @@ class imageViewModel: ObservableObject {
         request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil { self.statistics_add() }
             if let data = data {
                 DispatchQueue.main.async {
                     do {
@@ -80,6 +81,12 @@ class imageViewModel: ObservableObject {
         } catch {
             fatalError("Unresolved error: \(error as NSError)")
         }
+    }
+    
+    func statistics_add() {
+        let statistics_total = UserDefaults.standard.string(forKey: "Settings.statistics.total") ?? "0"
+        let statistics_total_added = (Int(statistics_total) ?? 0) + 1
+        UserDefaults.standard.set("\(statistics_total_added)", forKey: "Settings.statistics.total")
     }
     
     struct Response: Codable {

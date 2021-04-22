@@ -16,6 +16,7 @@
 		F8AAF702262BEA1D00DD0095 /* Mantis in Frameworks */ = {isa = PBXBuildFile; productRef = F8AAF701262BEA1D00DD0095 /* Mantis */; };
 		F8AAF705262BEA4B00DD0095 /* ImageCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */; };
 		F8AAF708262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AAF707262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift */; };
+		F8B16893262EEA4B00F71362 /* HistoryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B16892262EEA4B00F71362 /* HistoryImageView.swift */; };
 		F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177B262307C2008CCFB3 /* ContentView.swift */; };
 		F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177E262309BA008CCFB3 /* SettingsView.swift */; };
 		F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2178626233CA7008CCFB3 /* HistoryView.swift */; };
@@ -48,6 +49,7 @@
 		F895A271262350CE005800DA /* LaTeXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXView.swift; sourceTree = "<group>"; };
 		F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperView.swift; sourceTree = "<group>"; };
 		F8AAF707262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modal+DisableDragToDismiss.swift"; sourceTree = "<group>"; };
+		F8B16892262EEA4B00F71362 /* HistoryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImageView.swift; sourceTree = "<group>"; };
 		F8B2177B262307C2008CCFB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8B2177E262309BA008CCFB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F8B2178626233CA7008CCFB3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				F895A26D262350A5005800DA /* CodeView.swift */,
 				F895A271262350CE005800DA /* LaTeXView.swift */,
 				F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */,
+				F8B16892262EEA4B00F71362 /* HistoryImageView.swift */,
 			);
 			path = ComponentVIew;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B16893262EEA4B00F71362 /* HistoryImageView.swift in Sources */,
 				F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */,
 				F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */,
 				F8AAF705262BEA4B00DD0095 /* ImageCropperView.swift in Sources */,

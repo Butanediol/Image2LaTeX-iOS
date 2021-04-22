@@ -10,7 +10,6 @@ import SwiftUIX
 
 struct ContentView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-//    @Environment(\.managedObjectContext) private var viewContext
     @State var selectedView: Int?
     @State var searchText: String?
 
