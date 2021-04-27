@@ -8,11 +8,11 @@
 import CoreData
 import SwiftUI
 import SwiftUIX
+import WaterfallGrid
 
 struct HistoryView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \HistoryImage.timestamp, ascending: true)],
-                  animation: .easeInOut)
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \HistoryImage.timestamp, ascending: true)])
     private var historyImages: FetchedResults<HistoryImage>
 
     // View States
@@ -21,27 +21,29 @@ struct HistoryView: View {
     @State var isEditing: Bool = false
 
     var body: some View {
-        List {
-            ForEach(historyImages.filter {
-                searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
-            }) { image in
-                HStack {
-                    Image(data: image.imageData!)?.resizable().scaledToFill().frame(width: 50, height: 50)
-                        .onTapGesture {
-                            selectedHistoryImage = image
-                            print("Date: \(dateFormatter.string(from: image.timestamp!))")
-                        }
-                    NavigationLink(destination: HistoryImageView(image: image), label: {EmptyView()})
+
+        ScrollView(showsIndicators: true) {
+
+            if (historyImages.isEmpty) {
+                Text("No history.")
+            } else {
+
+                WaterfallGrid(historyImages.filter {
+                    searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
+                }) { image in
+
+                    HistoryImageCardView(image: image)
+
                 }
+                    .gridStyle(columnsInPortrait: 1, columnsInLandscape: 3, spacing: 8, animation: .spring())
             }
-            .onDelete(perform: deleteHistory)
         }
-        .navigationSearchBar {
+            .navigationSearchBar {
             SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
                 .showsCancelButton(isEditing)
                 .onCancel {
-                    searchText = nil
-                }
+                searchText = nil
+            }
         }
     }
 
@@ -54,9 +56,7 @@ struct HistoryView: View {
             do {
                 try viewContext.save()
             } catch {
-                // TODO: Replace with proper handle implementation
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                // TODO: - Replace with proper handle implementation
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

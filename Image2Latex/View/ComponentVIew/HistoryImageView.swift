@@ -15,41 +15,13 @@ struct HistoryImageView: View {
     @State var image: HistoryImage
     
     var body: some View {
-        Image(data: image.imageData ?? Data())?
-            .resizable()
-            .scaledToFit()
-        
-        ZStack {
+        VStack {
+            Image(data: image.imageData ?? Data())?
+                .resizable()
+                .scaledToFit()
             
-            VStack {
-                Spacer()
-                HStack {
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image(systemName: "arrow.left")
-                            .font(.system(.title))
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.primary)
-                    })
-                    
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                        deleteAfter()
-                    }, label: {
-                        Image(systemName: "trash")
-                            .font(.system(.title))
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(.red)
-                    })
-                }
-                .background(.systemBackground)
-                .cornerRadius(25)
-                .padding()
-                .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 0)
-            }
+            Spacer()
         }
-        .hideNavigationBar()
     }
     
     private func deleteAfter() {

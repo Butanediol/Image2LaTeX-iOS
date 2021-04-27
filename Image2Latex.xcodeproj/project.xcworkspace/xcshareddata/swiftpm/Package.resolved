@@ -14,9 +14,18 @@
         "package": "SwiftUIX",
         "repositoryURL": "https://github.com/SwiftUIX/SwiftUIX",
         "state": {
+          "branch": "master",
+          "revision": "37b0c4780b26617e71b2f8812adfbc2ae9445241",
+          "version": null
+        }
+      },
+      {
+        "package": "WaterfallGrid",
+        "repositoryURL": "https://github.com/paololeonardi/WaterfallGrid",
+        "state": {
           "branch": null,
-          "revision": "e0fd9ff48354a447d5dccdb4b485a69b63688e48",
-          "version": "0.0.6"
+          "revision": "944aa82832ed5a9eaaf50862cdd53e3c10ab55eb",
+          "version": "1.0.1"
         }
       }
     ]

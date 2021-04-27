@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F817CEBB2631C6860099384D /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = F817CEBA2631C6860099384D /* WaterfallGrid */; };
 		F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */; };
 		F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */; };
 		F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 		F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177B262307C2008CCFB3 /* ContentView.swift */; };
 		F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177E262309BA008CCFB3 /* SettingsView.swift */; };
 		F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2178626233CA7008CCFB3 /* HistoryView.swift */; };
+		F8F328DB26328E8B00DA5744 /* HistoryImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */; };
 		F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */; };
 		F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A8261E997B000F35BD /* ImageView.swift */; };
 		F8FE54AB261E997C000F35BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FE54AA261E997C000F35BD /* Assets.xcassets */; };
@@ -53,6 +55,7 @@
 		F8B2177B262307C2008CCFB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8B2177E262309BA008CCFB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F8B2178626233CA7008CCFB3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImageCardView.swift; sourceTree = "<group>"; };
 		F8FE54A3261E997B000F35BD /* Image2Latex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Image2Latex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image2LatexApp.swift; sourceTree = "<group>"; };
 		F8FE54A8261E997B000F35BD /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F817CEBB2631C6860099384D /* WaterfallGrid in Frameworks */,
 				F8AAF702262BEA1D00DD0095 /* Mantis in Frameworks */,
 				F8FE54B8261E99D3000F35BD /* SwiftUIX in Frameworks */,
 			);
@@ -101,6 +105,7 @@
 				F895A271262350CE005800DA /* LaTeXView.swift */,
 				F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */,
 				F8B16892262EEA4B00F71362 /* HistoryImageView.swift */,
+				F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */,
 			);
 			path = ComponentVIew;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			packageProductDependencies = (
 				F8FE54B7261E99D3000F35BD /* SwiftUIX */,
 				F8AAF701262BEA1D00DD0095 /* Mantis */,
+				F817CEBA2631C6860099384D /* WaterfallGrid */,
 			);
 			productName = Image2Latex;
 			productReference = F8FE54A3261E997B000F35BD /* Image2Latex.app */;
@@ -205,6 +211,7 @@
 			packageReferences = (
 				F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */,
+				F817CEB92631C6860099384D /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
 			);
 			productRefGroup = F8FE54A4261E997B000F35BD /* Products */;
 			projectDirPath = "";
@@ -233,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B16893262EEA4B00F71362 /* HistoryImageView.swift in Sources */,
+				F8F328DB26328E8B00DA5744 /* HistoryImageCardView.swift in Sources */,
 				F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */,
 				F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */,
 				F8AAF705262BEA4B00DD0095 /* ImageCropperView.swift in Sources */,
@@ -436,6 +444,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F817CEB92631C6860099384D /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 		F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/guoyingtao/Mantis";
@@ -448,13 +464,18 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.6;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F817CEBA2631C6860099384D /* WaterfallGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F817CEB92631C6860099384D /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
+		};
 		F8AAF701262BEA1D00DD0095 /* Mantis */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */;
