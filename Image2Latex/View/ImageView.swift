@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ImageView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     @ObservedObject var viewModel = imageViewModel()
     @State private var selectImage = false
@@ -105,7 +106,7 @@ struct ImageView: View {
         }
         .padding()
         .animation(.spring())
-        .navigationBarHidden(true)
+        .navigationBarHidden(horizontalSizeClass == .compact ? true : false)
     }
 }
 

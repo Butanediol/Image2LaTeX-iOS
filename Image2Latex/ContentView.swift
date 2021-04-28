@@ -15,7 +15,7 @@ struct ContentView: View {
 
     var body: some View {
         if horizontalSizeClass == .compact {
-            // 如果横向布局为紧凑
+            // 如果横向布局为紧凑 (iPhone, iPad portrait mode)
             TabView {
                 ImageView()
                     .tabItem {
@@ -43,7 +43,7 @@ struct ContentView: View {
             }
         }
         else {
-            // 否则
+            // 否则 (iPad & iPhone Max / Plus Series landscape mode)
             NavigationView {
                 List {
                     NavigationLink(

@@ -29,7 +29,7 @@ struct SettingsView: View {
 
     var body: some View {
         List {
-            Section(header: Text("API"), footer: Text("To get an API Token")) {
+            Section(header: Text("API"), footer: Text("To get your App ID and App Key, you need to create your own Mathpix account and add a payment method.")) {
                 HStack { // API ID
                     Text("App ID")
                     TextField("ID", text: $app_id)
@@ -62,9 +62,9 @@ struct SettingsView: View {
                     Toggle("Development Mode", isOn: $dev_mode).onChange(of: dev_mode, perform: { mode in UserDefaults.standard.set(dev_mode, forKey: "Settings.devmode") })
                 }
 
-                Button("Get an API key") {
+                Button(action: {
                     self.showSafari = true
-                }
+                }) { Text("Get an API key") }
                     .sheet(isPresented: $showSafari) {
                     SafariView(url: URL(string: "https://accounts.mathpix.com/ocr-api")!)
                 }
@@ -77,9 +77,10 @@ struct SettingsView: View {
                     Text("\(statistics_total)")
                 }
 
-                Button("Reset Statistics") {
+                Button(action: {
                     resetStatisticsConfirm.toggle()
-                }.alert(isPresented: $resetStatisticsConfirm) {
+                }) { Text("Reset Statistics") }
+                    .alert(isPresented: $resetStatisticsConfirm) {
                     Alert(
                         title: Text("Are you sure you want to reset statistics?"),
                         primaryButton: .destructive(Text("Reset")) { UserDefaults.standard.set(0, forKey: "Settings.statistics.total"); refreshSettingsData() },
@@ -89,9 +90,9 @@ struct SettingsView: View {
             }
 
             Section(header: Text("History")) {
-                Button("Delete all history") {
+                Button(action: {
                     showDeleteAlert.toggle()
-                }
+                }) { Text("Delete all history") }
                     .foregroundColor(.systemRed)
                     .alert(isPresented: $showDeleteAlert) {
                     Alert(

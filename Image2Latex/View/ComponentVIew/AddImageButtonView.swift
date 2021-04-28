@@ -16,7 +16,7 @@ struct AddImageButtonView: View {
                     .font(.system(size: 72))
             }
             .frame(maxWidth: 144, maxHeight: 144)
-            Text("Tap to select an image.")
+            Text("Tap to select an image")
                 .font(.caption)
         }
         .foregroundColor(.secondary)

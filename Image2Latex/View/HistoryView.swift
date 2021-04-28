@@ -19,11 +19,11 @@ struct HistoryView: View {
     @State var searchText: String?
     @State private var selectedHistoryImage: HistoryImage?
     @State var isEditing: Bool = false
-
+    
     var body: some View {
 
         if (historyImages.isEmpty) {
-            Text("No history.")
+            Text("No history")
                 .hideNavigationBar()
         } else {
 
@@ -56,7 +56,7 @@ struct HistoryView: View {
 
             }
                 .navigationSearchBar {
-                SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
+                    SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
                     .showsCancelButton(isEditing)
                     .onCancel {
                     searchText = nil

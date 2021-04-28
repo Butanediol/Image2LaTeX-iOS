@@ -1,0 +1,16 @@
+/*
+  Localizable.strings
+  Image2Latex
+
+  Created by Butanediol on 28/4/2021.
+  
+*/
+
+// MARK: - ImageView.swift
+"Placeholder" = "Placeholder";
+"Error" = "Error";
+"Text" = "Text";
+"LaTeX" = "LaTeX";
+"HTML" = "HTML";
+"Remove" = "Remove";
+"Process" = "Process";
