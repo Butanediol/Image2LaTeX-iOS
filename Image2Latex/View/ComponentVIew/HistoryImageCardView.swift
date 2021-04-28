@@ -48,13 +48,13 @@ struct HistoryImageCardView: View {
             )
                 .padding([.top, .horizontal])
         }
-            .contextMenu { // Long press to delete
-            Button {
-                deleteImage(image)
-            } label: {
-                Label("Delete", systemImage: "trash")
-            }
-        }
+//            .contextMenu { // Long press to delete
+//            Button {
+//                deleteImage(image)
+//            } label: {
+//                Label("Delete", systemImage: "trash")
+//            }
+//        }
     }
 }
 

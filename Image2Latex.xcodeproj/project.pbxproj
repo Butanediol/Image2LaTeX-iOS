@@ -82,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				F895A26C2623507C005800DA /* ComponentVIew */,
-				F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */,
 				F8FE54A8261E997B000F35BD /* ImageView.swift */,
 				F8B2177E262309BA008CCFB3 /* SettingsView.swift */,
 				F8B2178626233CA7008CCFB3 /* HistoryView.swift */,
@@ -103,6 +102,7 @@
 			children = (
 				F895A26D262350A5005800DA /* CodeView.swift */,
 				F895A271262350CE005800DA /* LaTeXView.swift */,
+				F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */,
 				F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */,
 				F8B16892262EEA4B00F71362 /* HistoryImageView.swift */,
 				F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */,

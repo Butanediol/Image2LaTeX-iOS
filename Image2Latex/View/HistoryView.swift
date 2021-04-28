@@ -22,27 +22,45 @@ struct HistoryView: View {
 
     var body: some View {
 
-        ScrollView(showsIndicators: true) {
+        if (historyImages.isEmpty) {
+            Text("No history.")
+                .hideNavigationBar()
+        } else {
 
-            if (historyImages.isEmpty) {
-                Text("No history.")
-            } else {
-
-                WaterfallGrid(historyImages.filter {
+            List {
+                ForEach(historyImages.filter {
                     searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
                 }) { image in
+                    NavigationLink(destination: HistoryImageView(image: image)) {
+                        HStack(alignment: .lastTextBaseline) {
+                            Image(data: image.imageData ?? Data())?
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 100, height: 100)
+                                .clipped()
+                                .cornerRadius(10)
+                                .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), lineWidth: 1)
+                            )
 
-                    HistoryImageCardView(image: image)
-
+                            VStack(alignment: .leading) {
+                                Text(dateFormatter.string(from: image.timestamp!))
+                                HistoryImageBadgeRow(image: image)
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
                 }
-                    .gridStyle(columnsInPortrait: 1, columnsInLandscape: 3, spacing: 8, animation: .spring())
+                    .onDelete(perform: deleteHistory)
+
             }
-        }
-            .navigationSearchBar {
-            SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
-                .showsCancelButton(isEditing)
-                .onCancel {
-                searchText = nil
+                .navigationSearchBar {
+                SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
+                    .showsCancelButton(isEditing)
+                    .onCancel {
+                    searchText = nil
+                }
             }
         }
     }
@@ -62,6 +80,38 @@ struct HistoryView: View {
             }
         }
     }
+}
+
+struct HistoryImageBadgeRow: View {
+    
+    var image: HistoryImage
+    
+    var body: some View {
+        HStack {
+            if image.latex != nil {
+                Text("LaTeX")
+                    .font(.caption)
+                    .foregroundColor(.white)
+                    .padding(2)
+                    .background(RoundedRectangle(cornerRadius: 4).fill(Color.green))
+            }
+            if image.html != nil {
+                Text("HTML")
+                    .font(.caption)
+                    .foregroundColor(.white)
+                    .padding(2)
+                    .background(RoundedRectangle(cornerRadius: 4).fill(Color.orange))
+            }
+            if image.text != nil {
+                Text("Text")
+                    .font(.caption)
+                    .foregroundColor(.white)
+                    .padding(2)
+                    .background(RoundedRectangle(cornerRadius: 4).fill(Color.yellow))
+            }
+        }
+    }
+    
 }
 
 let dateFormatter: DateFormatter = {

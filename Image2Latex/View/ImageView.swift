@@ -30,6 +30,7 @@ struct ImageView: View {
                     .frame(maxWidth: viewModel.image == nil ? .infinity : 0, maxHeight: viewModel.image == nil ? .infinity : 0)
             }.sheet(isPresented: $selectImage, onDismiss: {cropImage = true}) {
                 ImagePicker(image: $viewModel.image)
+                    .edgesIgnoringSafeArea(.bottom)
             }
             
             if let imageData = viewModel.image { // Image loaded
@@ -37,10 +38,10 @@ struct ImageView: View {
                 
                 Image(uiImage: imageData)
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: viewModel.isLoading || viewModel.response != nil ? .fill : .fit)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 16, maxHeight: viewModel.isLoading || viewModel.response != nil ? 200 : 400)
+                    .clipped()
                     .cornerRadius(10)
-                    .shadow(color: Color(hexadecimal: "d3d3d3"), radius: dropShadowRadius, x: 0, y: 0)
-                    .frame(maxHeight: viewModel.isLoading || viewModel.response != nil ? 200 : 400)
                     .onTapGesture { cropImage.toggle() }
                     .fullScreenCover(isPresented: $cropImage) { // If requesting, ban cropping
                         MantisController(image: viewModel.image!, showView: $cropImage) { image in
