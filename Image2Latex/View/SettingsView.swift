@@ -16,7 +16,8 @@ struct SettingsView: View {
     @State var showSafari = false
     @State var showDeleteAlert = false
     @State var deletedSuccessfully = false
-    
+    @State var resetStatisticsConfirm = false
+
     @State var app_id = UserDefaults.standard.string(forKey: "Settings.app_id") ?? ""
     @State var app_key = UserDefaults.standard.string(forKey: "Settings.app_key") ?? ""
     @State var dev_mode = UserDefaults.standard.bool(forKey: "Settings.devmode")
@@ -56,7 +57,7 @@ struct SettingsView: View {
                         UserDefaults.standard.set(app_key, forKey: "Settings.app_key")
                     }
                 }
-                
+
                 HStack { // MARK: - DEV MODE
                     Toggle("Development Mode", isOn: $dev_mode).onChange(of: dev_mode, perform: { mode in UserDefaults.standard.set(dev_mode, forKey: "Settings.devmode") })
                 }
@@ -74,6 +75,16 @@ struct SettingsView: View {
                     Text("Total")
                     Spacer()
                     Text("\(statistics_total)")
+                }
+
+                Button("Reset Statistics") {
+                    resetStatisticsConfirm.toggle()
+                }.alert(isPresented: $resetStatisticsConfirm) {
+                    Alert(
+                        title: Text("Are you sure you want to reset statistics?"),
+                        primaryButton: .destructive(Text("Reset")) { UserDefaults.standard.set(0, forKey: "Settings.statistics.total"); refreshSettingsData() },
+                        secondaryButton: .cancel()
+                    )
                 }
             }
 

@@ -32,7 +32,7 @@ struct HistoryView: View {
                     searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
                 }) { image in
                     NavigationLink(destination: HistoryImageView(image: image)) {
-                        HStack(alignment: .lastTextBaseline) {
+                        HStack(alignment: .bottom) {
                             Image(data: image.imageData ?? Data())?
                                 .resizable()
                                 .scaledToFill()

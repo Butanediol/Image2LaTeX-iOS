@@ -20,8 +20,17 @@ struct HistoryImageView: View {
                 .resizable()
                 .scaledToFit()
             
-            Spacer()
+            if let text = image.text {
+                CodeView(type: "Text", content: text)
+            }
+            if let latex = image.latex {
+                CodeView(type: "LaTeX", content: latex)
+            }
+            if let html = image.html {
+                CodeView(type: "HTML", content: html)
+            }
         }
+        .padding()
     }
     
     private func deleteAfter() {
