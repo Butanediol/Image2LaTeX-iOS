@@ -66,7 +66,7 @@ struct SettingsView: View {
                     self.showSafari = true
                 }) { Text("Get an API key") }
                     .sheet(isPresented: $showSafari) {
-                    SafariView(url: URL(string: "https://accounts.mathpix.com/ocr-api")!)
+                    SafariView(url: URL(string: "https://accounts.mathpix.com/ocr-api")!).edgesIgnoringSafeArea(.bottom)
                 }
             }
 

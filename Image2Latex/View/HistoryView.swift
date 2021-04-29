@@ -18,8 +18,9 @@ struct HistoryView: View {
     // View States
     @State var searchText: String?
     @State private var selectedHistoryImage: HistoryImage?
-    @State var isEditing: Bool = false
-    
+    @State private var isEditing: Bool = false
+    @State var selectKeeper = Set<HistoryImage>()
+
     var body: some View {
 
         if (historyImages.isEmpty) {
@@ -27,7 +28,7 @@ struct HistoryView: View {
                 .hideNavigationBar()
         } else {
 
-            List {
+            List(selection: $selectKeeper) {
                 ForEach(historyImages.filter {
                     searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
                 }) { image in
@@ -48,15 +49,24 @@ struct HistoryView: View {
                                 Text(dateFormatter.string(from: image.timestamp!))
                                 HistoryImageBadgeRow(image: image)
                             }
-                            .padding(.horizontal)
+                                .padding(.horizontal)
                         }
                     }
                 }
                     .onDelete(perform: deleteHistory)
 
             }
+                .listStyle(PlainListStyle())
+            .toolbar {
+                EditButton()
+//                if (!selectKeeper.isEmpty) {
+                    Button(action: {}) {
+                        Text("Delete").foregroundColor(.systemRed)
+                    }
+//                }
+            }
                 .navigationSearchBar {
-                    SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
+                SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
                     .showsCancelButton(isEditing)
                     .onCancel {
                     searchText = nil
@@ -83,9 +93,9 @@ struct HistoryView: View {
 }
 
 struct HistoryImageBadgeRow: View {
-    
+
     var image: HistoryImage
-    
+
     var body: some View {
         HStack {
             if image.latex != nil {
@@ -111,7 +121,7 @@ struct HistoryImageBadgeRow: View {
             }
         }
     }
-    
+
 }
 
 let dateFormatter: DateFormatter = {

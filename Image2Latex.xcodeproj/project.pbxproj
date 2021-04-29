@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F811557F2639B006007C20F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81155812639B006007C20F3 /* Localizable.strings */; };
 		F81155842639B4F4007C20F3 /* LocalizedStringKey+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81155832639B4F4007C20F3 /* LocalizedStringKey+ToString.swift */; };
-		F817CEBB2631C6860099384D /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = F817CEBA2631C6860099384D /* WaterfallGrid */; };
 		F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */; };
 		F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */; };
 		F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */; };
@@ -74,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F817CEBB2631C6860099384D /* WaterfallGrid in Frameworks */,
 				F8AAF702262BEA1D00DD0095 /* Mantis in Frameworks */,
 				F8FE54B8261E99D3000F35BD /* SwiftUIX in Frameworks */,
 			);
@@ -186,7 +184,6 @@
 			packageProductDependencies = (
 				F8FE54B7261E99D3000F35BD /* SwiftUIX */,
 				F8AAF701262BEA1D00DD0095 /* Mantis */,
-				F817CEBA2631C6860099384D /* WaterfallGrid */,
 			);
 			productName = Image2Latex;
 			productReference = F8FE54A3261E997B000F35BD /* Image2Latex.app */;
@@ -219,7 +216,6 @@
 			packageReferences = (
 				F8FE54B6261E99D3000F35BD /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */,
-				F817CEB92631C6860099384D /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
 			);
 			productRefGroup = F8FE54A4261E997B000F35BD /* Products */;
 			projectDirPath = "";
@@ -469,14 +465,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F817CEB92631C6860099384D /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
-			};
-		};
 		F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/guoyingtao/Mantis";
@@ -496,11 +484,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F817CEBA2631C6860099384D /* WaterfallGrid */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F817CEB92631C6860099384D /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
-			productName = WaterfallGrid;
-		};
 		F8AAF701262BEA1D00DD0095 /* Mantis */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8AAF700262BEA1D00DD0095 /* XCRemoteSwiftPackageReference "Mantis" */;

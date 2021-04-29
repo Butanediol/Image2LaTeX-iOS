@@ -1,55 +1,102 @@
-/* 
-  Localizable.strings
-  Image2Latex
 
-  Created by Butanediol on 28/4/2021.
-  
-*/
-
-// MARK: - ContentView.swift
-"Mathpix" = "Mathpix";
-"History" = "历史记录";
-"Settings" = "设置";
-
-// MARK: - ImageView.swift
-"Placeholder" = "Error";
-"Error" = "Error";
-"Text" = "Text";
-"LaTeX" = "LaTeX";
-"HTML" = "HTML";
-"Remove" = "移除";
-"Process" = "处理";
-
-// MARK: - History View
-"No history" = "无历史记录";
-"Search history..." = "搜索历史记录...";
-"Unresolved error %@, %@" = "未处理的错误 $@， %@";
-"Text" = "Text";
-"LaTeX" = "LaTeX";
-"HTML" = "HTML";
-
-// MARK: - Settings View
-"API" = "API";
-"To get your App ID and App Key, you need to create your own Mathpix account and add a payment method."
-    = "为获取一个 App ID 和 App Key，你需要注册一个 Mathpix 账户，并添加一个付款方式。";
-"App ID" = "App ID";
-"ID" = "ID";
-"App Key" = "App Key";
-"Key" = "Key";
-"Development Mode" = "开发模式";
-"Get an API key" = "获取 API key";
-"Statistics" = "统计数据";
-"Total" = "次数";
-"Reset Statistics" = "重置统计数据";
-"Are you sure you want to reset statistics?" = "你确定要重置统计数据吗？";
-"History" = "历史记录";
-"Delete all history" = "删除全部历史记录";
-"Are you sure you want to delete all history images?" = "你确定要删除全部历史记录吗?";
-"There is no undo" = "此操作无法撤销";
-"Delete" = "删除";
-
-// MARK: - CodeView.swift
+/* MARK: - CodeView.swift */
 "%@ copied to clipboard." = "%@ 已复制到剪贴板。";
 
-// MARK: - AddImageButtonView.swift
+/* MARK: - Settings View */
+"API" = "API";
+
+
+"App ID" = "App ID";
+
+
+"App Key" = "App Key";
+
+
+"Are you sure you want to delete all history images?" = "你确定要删除全部历史记录吗?";
+
+
+"Are you sure you want to reset statistics?" = "你确定要重置统计数据吗？";
+
+
+"Delete" = "删除";
+
+
+"Delete all history" = "删除全部历史记录";
+
+
+"Development Mode" = "开发模式";
+
+
+"Error" = "Error";
+
+
+"Get an API key" = "获取 API key";
+
+
+"HTML" = "HTML";
+
+
+"HTML" = "HTML";
+
+
+"History" = "历史记录";
+
+
+"History" = "历史记录";
+
+
+"ID" = "ID";
+
+
+"Key" = "Key";
+
+
+"LaTeX" = "LaTeX";
+
+
+"LaTeX" = "LaTeX";
+
+/* MARK: - ContentView.swift */
+"Mathpix" = "Mathpix";
+
+/* MARK: - History View */
+"No history" = "无历史记录";
+
+/* MARK: - ImageView.swift */
+"Placeholder" = "Error";
+
+
+"Process" = "处理";
+
+
+"Remove" = "移除";
+
+
+"Reset" = "重置";
+
+
+"Reset Statistics" = "重置统计数据";
+
+
+"Search history..." = "搜索历史记录...";
+
+
+"Settings" = "设置";
+
+
+"Statistics" = "统计数据";
+
+/* MARK: - AddImageButtonView.swift */
 "Tap to select an image" = "点击选择一张图片";
+
+
+"Text" = "Text";
+
+
+"Text" = "Text";
+
+
+"There is no undo" = "此操作无法撤销";
+
+
+"Total" = "次数";

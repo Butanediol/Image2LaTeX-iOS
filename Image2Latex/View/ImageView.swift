@@ -11,16 +11,16 @@ import SwiftUI
 struct ImageView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
+
     @ObservedObject var viewModel = imageViewModel()
     @State private var selectImage = false
     @State private var cropImage = false
-    
+
     let dropShadowRadius: CGFloat = 2.0
-    
+
     var body: some View {
         VStack(spacing: 8) {
-            
+
             // Image not loaded
             Button(action: {
                 self.selectImage = true
@@ -29,14 +29,14 @@ struct ImageView: View {
                     .opacity(viewModel.image == nil ? 1 : 0)
                     .scaleEffect(x: viewModel.image == nil ? 1 : 0, y: viewModel.image == nil ? 1 : 0)
                     .frame(maxWidth: viewModel.image == nil ? .infinity : 0, maxHeight: viewModel.image == nil ? .infinity : 0)
-            }.sheet(isPresented: $selectImage, onDismiss: {cropImage = true}) {
+            }.sheet(isPresented: $selectImage, onDismiss: { cropImage = true }) {
                 ImagePicker(image: $viewModel.image)
                     .edgesIgnoringSafeArea(.bottom)
             }
-            
+
             if let imageData = viewModel.image { // Image loaded
                 Spacer()
-                
+
                 Image(uiImage: imageData)
                     .resizable()
                     .aspectRatio(contentMode: viewModel.isLoading || viewModel.response != nil ? .fill : .fit)
@@ -45,15 +45,15 @@ struct ImageView: View {
                     .cornerRadius(10)
                     .onTapGesture { cropImage.toggle() }
                     .fullScreenCover(isPresented: $cropImage) { // If requesting, ban cropping
-                        MantisController(image: viewModel.image!, showView: $cropImage) { image in
-                            if let image = image {
-                                viewModel.image = image
-                            }
+                    MantisController(image: viewModel.image!, showView: $cropImage) { image in
+                        if let image = image {
+                            viewModel.image = image
                         }
-                        .edgesIgnoringSafeArea(.vertical)
                     }
+                        .edgesIgnoringSafeArea(.vertical)
+                }
                 Spacer()
-                
+
                 // Loading
                 if viewModel.isLoading {
                     CodeView(type: "", content: String(repeating: "Placeholder", count: Int.random(in: 20...40)))
@@ -61,7 +61,7 @@ struct ImageView: View {
                     CodeView(type: "", content: String(repeating: "Placeholder", count: Int.random(in: 20...40)))
                         .redacted(reason: .placeholder)
                 }
-                
+
                 // Results
                 if let response = viewModel.response {
                     if response.error != nil {
@@ -78,7 +78,7 @@ struct ImageView: View {
                         }
                     }
                 }
-                
+
                 // Control Buttons
                 HStack {
                     if (!viewModel.isLoading) { // Request not finished.
@@ -88,25 +88,27 @@ struct ImageView: View {
                         }) {
                             Text("Remove")
                         }
-                        .padding(8)
-                        .background(.secondarySystemBackground)
-                        .clipShape(Capsule())
+                            .padding(.vertical, 8)
+                            .padding(.horizontal)
+                            .background(.secondarySystemBackground)
+                            .clipShape(Capsule())
                     }
-                    
+
                     if (!viewModel.isLoading && viewModel.response == nil) { // Not requesting or request not finished.
-                        Button("Process") {
+                        Button(action: {
                             viewModel.processImageV2(context: viewContext)
-                        }
-                        .padding(8)
-                        .background(.secondarySystemBackground)
-                        .clipShape(Capsule())
+                        }) { Text("Process") }
+                            .padding(.vertical, 8)
+                            .padding(.horizontal)
+                            .background(.secondarySystemBackground)
+                            .clipShape(Capsule())
                     }
                 }
             }
         }
-        .padding()
-        .animation(.spring())
-        .navigationBarHidden(horizontalSizeClass == .compact ? true : false)
+            .padding()
+            .animation(.spring())
+            .navigationBarHidden(horizontalSizeClass == .compact ? true : false)
     }
 }
 
@@ -117,7 +119,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         init(_ parent: ImagePicker) {
             self.parent = parent
         }
-        
+
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
@@ -126,14 +128,14 @@ struct ImagePicker: UIViewControllerRepresentable {
             parent.presentationMode.wrappedValue.dismiss()
         }
     }
-    
+
     @Environment(\.presentationMode) var presentationMode
     @Binding var image: UIImage?
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
+
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator

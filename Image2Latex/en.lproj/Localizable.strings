@@ -1,16 +1,93 @@
-/*
-  Localizable.strings
-  Image2Latex
 
-  Created by Butanediol on 28/4/2021.
-  
-*/
+/*  */
+"%@ copied to clipboard." = "%@ copied to clipboard";
 
-// MARK: - ImageView.swift
-"Placeholder" = "Placeholder";
+/*  */
+"API" = "API";
+
+/*  */
+"App ID" = "App ID";
+
+/*  */
+"App Key" = "App Key";
+
+/*  */
+"Are you sure you want to delete all history images?" = "Are you sure you want to delete all history images?";
+
+/*  */
+"Are you sure you want to reset statistics?" = "Are you sure you want to reset statistics?";
+
+/*  */
+"Delete" = "Delete";
+
+/*  */
+"Delete all history" = "Delete all history";
+
+/*  */
+"Development Mode" = "Development Mode";
+
+
 "Error" = "Error";
-"Text" = "Text";
-"LaTeX" = "LaTeX";
+
+/*  */
+"Get an API key" = "Get an API key";
+
+
 "HTML" = "HTML";
-"Remove" = "Remove";
+
+/*  */
+"History" = "History";
+
+/*  */
+"ID" = "ID";
+
+/*  */
+"Key" = "Key";
+
+
+"LaTeX" = "LaTeX";
+
+/*  */
+"Mathpix" = "LaTeX";
+
+/*  */
+"No history" = "No history";
+
+/* MARK: - ImageView.swift */
+"Placeholder" = "Placeholder";
+
+
 "Process" = "Process";
+
+
+"Remove" = "Remove";
+
+/*  */
+"Reset" = "Reset";
+
+/*  */
+"Reset Statistics" = "Reset Statistics";
+
+/*  */
+"Search history..." = "Search history...";
+
+/*  */
+"Settings" = "Settings";
+
+/*  */
+"Statistics" = "Statistics";
+
+/*  */
+"Tap to select an image" = "Tap to select an image";
+
+
+"Text" = "Text";
+
+/*  */
+"There is no undo" = "There is no undo";
+
+/*  */
+"Total" = "Total";
+
+/*  */
+"Unresolved error %@, %@" = "Unresolved error ";
