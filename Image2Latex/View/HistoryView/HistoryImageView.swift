@@ -15,22 +15,26 @@ struct HistoryImageView: View {
     @State var image: HistoryImage
     
     var body: some View {
-        VStack {
-            Image(data: image.imageData ?? Data())?
-                .resizable()
-                .scaledToFit()
-            
-            if let text = image.text {
-                CodeView(type: "Text", content: text)
+        ScrollView(showsIndicators: false) {
+            LazyVStack {
+                Image(data: image.imageData ?? Data())?
+                    .resizable()
+                    .scaledToFit()
+                
+                
+                if let text = image.text {
+                    CodeView(type: "Text", content: text)
+                }
+                if let latex = image.latex {
+                    CodeView(type: "LaTeX", content: latex)
+                }
+                if let html = image.html {
+                    CodeView(type: "HTML", content: html)
+                }
             }
-            if let latex = image.latex {
-                CodeView(type: "LaTeX", content: latex)
-            }
-            if let html = image.html {
-                CodeView(type: "HTML", content: html)
-            }
+            .padding()
         }
-        .padding()
+        .fixFlickering()
     }
     
     private func deleteAfter() {

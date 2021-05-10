@@ -40,7 +40,6 @@ class imageViewModel: ObservableObject {
         request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if error == nil { self.statistics_add() }
             if let data = data {
                 DispatchQueue.main.async {
                     do {
@@ -48,6 +47,9 @@ class imageViewModel: ObservableObject {
                         self.saveAsHistory(imageData: self.image!.pngData()!, response: self.response,context: context)
                     } catch {
                         fatalError("Unresolved Error: \(error as NSError)")
+                    }
+                    if (self.response?.error) == nil {
+                        self.statistics_add()
                     }
                     self.isLoading = false
                 }

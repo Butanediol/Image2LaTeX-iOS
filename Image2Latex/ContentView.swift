@@ -70,10 +70,7 @@ struct ContentView: View {
                 }
                 .listStyle(SidebarListStyle())
                 .navigationBarTitle("Image2LaTeX")
-                EmptyView()
-                .onAppear {
-                    self.selectedView = 1
-                }
+                ImageView().navigationBarTitle("Mathpix")
             }
         }
     }

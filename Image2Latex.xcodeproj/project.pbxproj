@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F811557F2639B006007C20F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81155812639B006007C20F3 /* Localizable.strings */; };
-		F81155842639B4F4007C20F3 /* LocalizedStringKey+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81155832639B4F4007C20F3 /* LocalizedStringKey+ToString.swift */; };
 		F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */; };
 		F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */; };
 		F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */; };
@@ -22,6 +21,7 @@
 		F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177B262307C2008CCFB3 /* ContentView.swift */; };
 		F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2177E262309BA008CCFB3 /* SettingsView.swift */; };
 		F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2178626233CA7008CCFB3 /* HistoryView.swift */; };
+		F8C5B292264953ED0003E91E /* ScrollView+FixFlickering.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C5B291264953ED0003E91E /* ScrollView+FixFlickering.swift */; };
 		F8F328DB26328E8B00DA5744 /* HistoryImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */; };
 		F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */; };
 		F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FE54A8261E997B000F35BD /* ImageView.swift */; };
@@ -46,7 +46,6 @@
 /* Begin PBXFileReference section */
 		F81155802639B006007C20F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81155822639B075007C20F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		F81155832639B4F4007C20F3 /* LocalizedStringKey+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizedStringKey+ToString.swift"; sourceTree = "<group>"; };
 		F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonView.swift; sourceTree = "<group>"; };
 		F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		F87DAC0726247C4000187BD7 /* Image2Latex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Image2Latex.xcdatamodel; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		F8B2177B262307C2008CCFB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8B2177E262309BA008CCFB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F8B2178626233CA7008CCFB3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		F8C5B291264953ED0003E91E /* ScrollView+FixFlickering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+FixFlickering.swift"; sourceTree = "<group>"; };
 		F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImageCardView.swift; sourceTree = "<group>"; };
 		F8FE54A3261E997B000F35BD /* Image2Latex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Image2Latex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image2LatexApp.swift; sourceTree = "<group>"; };
@@ -84,42 +84,59 @@
 		F818E8C02622C289001CC72D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F895A26C2623507C005800DA /* ComponentVIew */,
-				F8FE54A8261E997B000F35BD /* ImageView.swift */,
-				F8B2177E262309BA008CCFB3 /* SettingsView.swift */,
-				F8B2178626233CA7008CCFB3 /* HistoryView.swift */,
+				F8C5B28E26494E0B0003E91E /* ImageView */,
+				F8C5B28F26494E250003E91E /* SettingsView */,
+				F8C5B29026494E360003E91E /* HistoryView */,
+				F895A26C2623507C005800DA /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F822EEB2261ED56F00EAB2AF /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */,
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
-		F895A26C2623507C005800DA /* ComponentVIew */ = {
+		F895A26C2623507C005800DA /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				F895A26D262350A5005800DA /* CodeView.swift */,
 				F895A271262350CE005800DA /* LaTeXView.swift */,
 				F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */,
 				F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */,
-				F8B16892262EEA4B00F71362 /* HistoryImageView.swift */,
-				F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */,
 			);
-			path = ComponentVIew;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		F8AAF706262BEDEB00DD0095 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				F8AAF707262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift */,
-				F81155832639B4F4007C20F3 /* LocalizedStringKey+ToString.swift */,
+				F8C5B291264953ED0003E91E /* ScrollView+FixFlickering.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F8C5B28E26494E0B0003E91E /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F8FE54A8261E997B000F35BD /* ImageView.swift */,
+				F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		F8C5B28F26494E250003E91E /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				F8B2177E262309BA008CCFB3 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		F8C5B29026494E360003E91E /* HistoryView */ = {
+			isa = PBXGroup;
+			children = (
+				F8B2178626233CA7008CCFB3 /* HistoryView.swift */,
+				F8B16892262EEA4B00F71362 /* HistoryImageView.swift */,
+				F8F328DA26328E8B00DA5744 /* HistoryImageCardView.swift */,
+			);
+			path = HistoryView;
 			sourceTree = "<group>";
 		};
 		F8FE549A261E997B000F35BD = {
@@ -143,7 +160,6 @@
 			children = (
 				F8AAF706262BEDEB00DD0095 /* Extension */,
 				F818E8C02622C289001CC72D /* View */,
-				F822EEB2261ED56F00EAB2AF /* View Model */,
 				F8FE54A6261E997B000F35BD /* Image2LatexApp.swift */,
 				F8B2177B262307C2008CCFB3 /* ContentView.swift */,
 				F81155812639B006007C20F3 /* Localizable.strings */,
@@ -247,12 +263,12 @@
 				F8B16893262EEA4B00F71362 /* HistoryImageView.swift in Sources */,
 				F8F328DB26328E8B00DA5744 /* HistoryImageCardView.swift in Sources */,
 				F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */,
+				F8C5B292264953ED0003E91E /* ScrollView+FixFlickering.swift in Sources */,
 				F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */,
 				F8AAF705262BEA4B00DD0095 /* ImageCropperView.swift in Sources */,
 				F87DAC0E26247D4B00187BD7 /* Persistence.swift in Sources */,
 				F895A272262350CE005800DA /* LaTeXView.swift in Sources */,
 				F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */,
-				F81155842639B4F4007C20F3 /* LocalizedStringKey+ToString.swift in Sources */,
 				F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */,
 				F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */,
 				F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */,

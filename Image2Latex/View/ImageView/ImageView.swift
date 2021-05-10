@@ -16,7 +16,7 @@ struct ImageView: View {
     @State private var selectImage = false
     @State private var cropImage = false
 
-    let dropShadowRadius: CGFloat = 2.0
+    private let dropShadowRadius: CGFloat = 2.0
 
     var body: some View {
         VStack(spacing: 8) {

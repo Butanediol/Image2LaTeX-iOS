@@ -10,7 +10,7 @@ import MobileCoreServices
 
 struct CodeView: View {
     
-    @State var type: String
+    @State var type: LocalizedStringKey
     @State var content: String
     @State var showCopyAlert = false
     @State var showRichTextView = false
@@ -39,7 +39,7 @@ struct CodeView: View {
             LaTeXView(latexContent: content)
         }
         .alert(isPresented: $showCopyAlert) {
-            Alert(title: Text("\(type) copied to clipboard."), message: Text(content), dismissButton: .none)
+            Alert(title: Text(type) + Text(" copied to clipboard."), message: Text(content), dismissButton: .none)
         }
     }
     

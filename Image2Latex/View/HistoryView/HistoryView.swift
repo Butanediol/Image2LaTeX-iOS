@@ -19,16 +19,16 @@ struct HistoryView: View {
     @State var searchText: String?
     @State private var selectedHistoryImage: HistoryImage?
     @State private var isEditing: Bool = false
-    @State var selectKeeper = Set<HistoryImage>()
 
     var body: some View {
 
         if (historyImages.isEmpty) {
             Text("No history")
+                .foregroundColor(.secondary)
                 .hideNavigationBar()
         } else {
 
-            List(selection: $selectKeeper) {
+            List {
                 ForEach(historyImages.filter {
                     searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
                 }) { image in
@@ -57,14 +57,6 @@ struct HistoryView: View {
 
             }
                 .listStyle(PlainListStyle())
-            .toolbar {
-                EditButton()
-//                if (!selectKeeper.isEmpty) {
-                    Button(action: {}) {
-                        Text("Delete").foregroundColor(.systemRed)
-                    }
-//                }
-            }
                 .navigationSearchBar {
                 SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
                     .showsCancelButton(isEditing)
