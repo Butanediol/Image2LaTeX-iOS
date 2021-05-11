@@ -14,6 +14,7 @@ struct CodeView: View {
     @State var content: String
     @State var showCopyAlert = false
     @State var showRichTextView = false
+    @State var paddingSize: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -23,6 +24,7 @@ struct CodeView: View {
                 .font(.system(size: 72, weight: .bold))
                 .italic()
                 .opacity(0.1)
+                .padding(paddingSize)
             Text(content)
                 .font(.system(.body, design: .monospaced))
                 .padding()
@@ -30,6 +32,7 @@ struct CodeView: View {
                     NSItemProvider(item: content.data(using: .utf8)! as NSData, typeIdentifier: kUTTypePlainText as String)
                 }
         }
+//        .frame(minHeight: 180)
         .onTapGesture {
             UIPasteboard.general.string = content
             showCopyAlert = true

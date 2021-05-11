@@ -20,16 +20,22 @@ struct HistoryImageView: View {
                 Image(data: image.imageData ?? Data())?
                     .resizable()
                     .scaledToFit()
+                    .cornerRadius(10)
+                    .clipped()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), lineWidth: 1)
+                    )
                 
                 
                 if let text = image.text {
-                    CodeView(type: "Text", content: text)
+                    CodeView(type: "Text", content: text, paddingSize: 54)
                 }
                 if let latex = image.latex {
-                    CodeView(type: "LaTeX", content: latex)
+                    CodeView(type: "LaTeX", content: latex, paddingSize: 54)
                 }
                 if let html = image.html {
-                    CodeView(type: "HTML", content: html)
+                    CodeView(type: "HTML", content: html, paddingSize: 54)
                 }
             }
             .padding()

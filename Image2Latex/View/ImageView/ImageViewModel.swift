@@ -27,7 +27,7 @@ class imageViewModel: ObservableObject {
         guard let URL = URL(string: "https://api.mathpix.com/v3/text") else { return }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
-
+        
         // Headers
         request.addValue(app_id, forHTTPHeaderField: "app_id")
         request.addValue(app_key, forHTTPHeaderField: "app_key")
@@ -59,14 +59,15 @@ class imageViewModel: ObservableObject {
     }
     
     func saveAsHistory(imageData: Data, response: Response?, context: NSManagedObjectContext) {
-                
+        
         guard let response = response else { return }
         
         if (response.error != nil && !UserDefaults.standard.bool(forKey: "Settings.devmode")) { return } // not in dev mode
-
+        
         let newHistoryImage = HistoryImage(context: context)
         newHistoryImage.imageData = imageData
         newHistoryImage.timestamp = Date()
+        newHistoryImage.thumbnailImageData = UIImage(data: imageData)?.jpegData(compressionQuality: 0)
         
         if let html = response.html {
             newHistoryImage.html = html

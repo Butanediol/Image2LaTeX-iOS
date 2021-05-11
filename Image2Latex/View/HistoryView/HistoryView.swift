@@ -11,68 +11,69 @@ import SwiftUIX
 import WaterfallGrid
 
 struct HistoryView: View {
+    // Core Data
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \HistoryImage.timestamp, ascending: true)])
     private var historyImages: FetchedResults<HistoryImage>
-
+    
     // View States
     @State var searchText: String?
     @State private var selectedHistoryImage: HistoryImage?
     @State private var isEditing: Bool = false
-
+    
     var body: some View {
-
+        
         if (historyImages.isEmpty) {
             Text("No history")
                 .foregroundColor(.secondary)
                 .hideNavigationBar()
         } else {
-
+            
             List {
                 ForEach(historyImages.filter {
                     searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
                 }) { image in
                     NavigationLink(destination: HistoryImageView(image: image)) {
                         HStack(alignment: .bottom) {
-                            Image(data: image.imageData ?? Data())?
+                            Image(data: image.thumbnailImageData ?? image.imageData ?? Data())?
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 100, height: 100)
                                 .clipped()
                                 .cornerRadius(10)
                                 .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), lineWidth: 1)
-                            )
-
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), lineWidth: 1)
+                                )
+                            
                             VStack(alignment: .leading) {
                                 Text(dateFormatter.string(from: image.timestamp!))
                                 HistoryImageBadgeRow(image: image)
                             }
-                                .padding(.horizontal)
+                            .padding(.horizontal)
                         }
                     }
                 }
-                    .onDelete(perform: deleteHistory)
-
+                .onDelete(perform: deleteHistory)
+                
             }
-                .listStyle(PlainListStyle())
-                .navigationSearchBar {
+            .listStyle(PlainListStyle())
+            .navigationSearchBar {
                 SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
                     .showsCancelButton(isEditing)
                     .onCancel {
-                    searchText = nil
-                }
+                        searchText = nil
+                    }
             }
         }
     }
-
+    
     private func deleteHistory(offsets: IndexSet) {
         withAnimation {
             offsets.map {
                 historyImages[$0]
             }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -85,9 +86,9 @@ struct HistoryView: View {
 }
 
 struct HistoryImageBadgeRow: View {
-
+    
     var image: HistoryImage
-
+    
     var body: some View {
         HStack {
             if image.latex != nil {
@@ -113,7 +114,7 @@ struct HistoryImageBadgeRow: View {
             }
         }
     }
-
+    
 }
 
 let dateFormatter: DateFormatter = {
