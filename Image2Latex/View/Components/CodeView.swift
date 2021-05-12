@@ -15,6 +15,7 @@ struct CodeView: View {
     @State var showCopyAlert = false
     @State var showRichTextView = false
     @State var paddingSize: CGFloat = 0
+    @State var disableCopy = false;
     
     var body: some View {
         ZStack {
@@ -34,9 +35,11 @@ struct CodeView: View {
         }
 //        .frame(minHeight: 180)
         .onTapGesture {
-            UIPasteboard.general.string = content
-            showCopyAlert = true
-//            showRichTextView = true
+            if !disableCopy {
+                UIPasteboard.general.string = content
+                showCopyAlert = true
+            }
+            showRichTextView = true
         }
         .sheet(isPresented: $showRichTextView) {
             LaTeXView(latexContent: content)

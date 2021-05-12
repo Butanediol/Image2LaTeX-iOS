@@ -26,7 +26,7 @@ struct HistoryView: View {
         if (historyImages.isEmpty) {
             Text("No history")
                 .foregroundColor(.secondary)
-                .hideNavigationBar()
+//                .hideNavigationBar()
         } else {
             
             List {
