@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/guoyingtao/Mantis",
         "state": {
           "branch": null,
-          "revision": "d722a58f80c87b3324739548a99767f100c88e1a",
-          "version": "1.6.0"
+          "revision": "0ee3df9d0aa9209a01d4a2ea49fce70d6398d49d",
+          "version": "1.7.1"
         }
       },
       {
@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/SwiftUIX/SwiftUIX",
         "state": {
           "branch": "master",
-          "revision": "37b0c4780b26617e71b2f8812adfbc2ae9445241",
+          "revision": "961a3475bf654faa2aff503aa27bfaf0444318b9",
           "version": null
         }
       }

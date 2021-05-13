@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F811557F2639B006007C20F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81155812639B006007C20F3 /* Localizable.strings */; };
+		F8186D40264C26C600DC1512 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8186D3F264C26C600DC1512 /* AboutView.swift */; };
 		F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */; };
 		F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */; };
 		F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		F81155802639B006007C20F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81155822639B075007C20F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F8186D3F264C26C600DC1512 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonView.swift; sourceTree = "<group>"; };
 		F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		F87DAC0726247C4000187BD7 /* Image2Latex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Image2Latex.xcdatamodel; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8186D3E264C26B900DC1512 /* AboutView */ = {
+			isa = PBXGroup;
+			children = (
+				F8186D3F264C26C600DC1512 /* AboutView.swift */,
+			);
+			path = AboutView;
+			sourceTree = "<group>";
+		};
 		F818E8C02622C289001CC72D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		F8C5B28F26494E250003E91E /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				F8186D3E264C26B900DC1512 /* AboutView */,
 				F8B2177E262309BA008CCFB3 /* SettingsView.swift */,
 			);
 			path = SettingsView;
@@ -262,6 +273,7 @@
 			files = (
 				F8B16893262EEA4B00F71362 /* HistoryImageView.swift in Sources */,
 				F8F328DB26328E8B00DA5744 /* HistoryImageCardView.swift in Sources */,
+				F8186D40264C26C600DC1512 /* AboutView.swift in Sources */,
 				F8B2178726233CA7008CCFB3 /* HistoryView.swift in Sources */,
 				F8C5B292264953ED0003E91E /* ScrollView+FixFlickering.swift in Sources */,
 				F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */,

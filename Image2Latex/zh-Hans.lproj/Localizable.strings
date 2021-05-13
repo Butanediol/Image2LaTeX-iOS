@@ -59,6 +59,12 @@
 
 "LaTeX" = "LaTeX";
 
+
+"About" = "关于";
+
+
+"About Image2LaTeX" = "关于Image2LaTeX";
+
 /* MARK: - ContentView.swift */
 "Mathpix" = "Mathpix";
 
@@ -67,6 +73,7 @@
 
 /* MARK: - ImageView.swift */
 "Error" = "错误";
+
 
 "Text" = "文本";
 
@@ -108,3 +115,11 @@
 
 
 "Total" = "次数";
+
+/* MARK: - AboutView.swift */
+
+"Open Source" = "开源相关";
+
+
+
+"Developer" = "开发者";

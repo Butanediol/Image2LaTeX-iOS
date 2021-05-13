@@ -105,19 +105,31 @@ struct SettingsView: View {
                     )
                 }
             }
+            
+            Section(header: Text("About")) {
+                NavigationLink(destination: AboutView()) {
+                    HStack {
+                        Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                            .clipShape(RoundedRectangle(cornerRadius: 3, style: .continuous))
+                        Text("About Image2LaTeX")
+                    }
+                }
+            }
+            
         }
             .listStyle(InsetGroupedListStyle())
             .onAppear { refreshSettingsData() }
     }
 
+}
+
+extension SettingsView {
     func refreshSettingsData() {
         self.app_id = UserDefaults.standard.string(forKey: "Settings.app_id") ?? ""
         self.app_key = UserDefaults.standard.string(forKey: "Settings.app_key") ?? ""
         self.statistics_total = UserDefaults.standard.integer(forKey: "Settings.statistics.total")
     }
-}
-
-extension SettingsView {
+    
     func deleteAllHistory() {
         for image in historyImages {
             viewContext.delete(image)

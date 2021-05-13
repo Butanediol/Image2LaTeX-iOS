@@ -8,7 +8,6 @@
 import CoreData
 import SwiftUI
 import SwiftUIX
-import WaterfallGrid
 
 struct HistoryView: View {
     // Core Data
