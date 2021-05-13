@@ -11,6 +11,7 @@
 		F8186D40264C26C600DC1512 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8186D3F264C26C600DC1512 /* AboutView.swift */; };
 		F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */; };
 		F822EEB4261ED58100EAB2AF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */; };
+		F86DCC88264D2DC5006F6588 /* ConfidenceBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86DCC87264D2DC5006F6588 /* ConfidenceBar.swift */; };
 		F87DAC0826247C4000187BD7 /* Image2Latex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0626247C4000187BD7 /* Image2Latex.xcdatamodeld */; };
 		F87DAC0E26247D4B00187BD7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DAC0D26247D4B00187BD7 /* Persistence.swift */; };
 		F895A26E262350A5005800DA /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F895A26D262350A5005800DA /* CodeView.swift */; };
@@ -50,6 +51,7 @@
 		F8186D3F264C26C600DC1512 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageButtonView.swift; sourceTree = "<group>"; };
 		F822EEB3261ED58100EAB2AF /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		F86DCC87264D2DC5006F6588 /* ConfidenceBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfidenceBar.swift; sourceTree = "<group>"; };
 		F87DAC0726247C4000187BD7 /* Image2Latex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Image2Latex.xcdatamodel; sourceTree = "<group>"; };
 		F87DAC0D26247D4B00187BD7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F895A26D262350A5005800DA /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				F895A26D262350A5005800DA /* CodeView.swift */,
+				F86DCC87264D2DC5006F6588 /* ConfidenceBar.swift */,
 				F895A271262350CE005800DA /* LaTeXView.swift */,
 				F818E8C12622C2AD001CC72D /* AddImageButtonView.swift */,
 				F8AAF704262BEA4B00DD0095 /* ImageCropperView.swift */,
@@ -284,6 +287,7 @@
 				F8B2177C262307C2008CCFB3 /* ContentView.swift in Sources */,
 				F8FE54A9261E997B000F35BD /* ImageView.swift in Sources */,
 				F8B2177F262309BA008CCFB3 /* SettingsView.swift in Sources */,
+				F86DCC88264D2DC5006F6588 /* ConfidenceBar.swift in Sources */,
 				F8AAF708262BEE1400DD0095 /* Modal+DisableDragToDismiss.swift in Sources */,
 				F818E8C22622C2AD001CC72D /* AddImageButtonView.swift in Sources */,
 				F8FE54A7261E997B000F35BD /* Image2LatexApp.swift in Sources */,

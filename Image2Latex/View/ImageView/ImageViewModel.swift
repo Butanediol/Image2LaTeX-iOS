@@ -68,6 +68,10 @@ class imageViewModel: ObservableObject {
         newHistoryImage.imageData = imageData
         newHistoryImage.timestamp = Date()
         newHistoryImage.thumbnailImageData = UIImage(data: imageData)?.jpegData(compressionQuality: 0)
+
+        if let confidence = response.confidence {
+            newHistoryImage.confidence = confidence
+        }
         
         if let html = response.html {
             newHistoryImage.html = html

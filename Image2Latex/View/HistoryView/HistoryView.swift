@@ -64,6 +64,7 @@ struct HistoryView: View {
                         searchText = nil
                     }
             }
+            .navigationSearchBarHiddenWhenScrolling(true)
         }
     }
     

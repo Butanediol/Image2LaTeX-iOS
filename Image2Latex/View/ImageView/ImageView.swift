@@ -55,6 +55,7 @@ struct ImageView: View {
                             }
                         }
                         .edgesIgnoringSafeArea(.vertical)
+                        .transition(.scale)
                     }
                 Spacer()
                 
@@ -71,6 +72,11 @@ struct ImageView: View {
                     if response.error != nil {
                         CodeView(type: "Error", content: "\(response.error_info != nil ? "\(response.error_info!.message)" : "")")
                     } else {
+                        
+                        if let confidence = response.confidence {
+                            ConfidenceBar(confidence: confidence)
+                        }
+                        
                         if let text = response.text {
                             CodeView(type: "Text", content: text)
                         }

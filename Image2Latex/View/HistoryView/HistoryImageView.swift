@@ -27,6 +27,9 @@ struct HistoryImageView: View {
                             .stroke(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), lineWidth: 1)
                     )
                 
+                if let confidence = image.confidence {
+                    ConfidenceBar(confidence: confidence)
+                }
                 
                 if let text = image.text {
                     CodeView(type: "Text", content: text, paddingSize: 54)
@@ -41,6 +44,7 @@ struct HistoryImageView: View {
             .padding()
         }
         .fixFlickering()
+        .navigationBarTitle(dateFormatter.string(from: image.timestamp ?? Date()), displayMode: .inline)
     }
     
     private func deleteAfter() {
