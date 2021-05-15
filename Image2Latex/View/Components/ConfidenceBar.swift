@@ -11,6 +11,7 @@ struct ConfidenceBar: View {
     
     let confidence: Float
     
+    @State private var animated = false
     @State var lengthRatio: CGFloat = 0
     
     var color: Color {
@@ -39,8 +40,11 @@ struct ConfidenceBar: View {
             }
         }
         .onAppear {
-            withAnimation(.spring(dampingFraction: 1).delay(0.2)) {
-                lengthRatio += CGFloat(confidence)
+            if animated == false {
+                withAnimation(.spring(dampingFraction: 1).delay(0.2)) {
+                    lengthRatio += CGFloat(confidence)
+                }
+                animated.toggle()
             }
         }
         .frame(height: 30)

@@ -57,7 +57,6 @@ struct ImageView: View {
                         .edgesIgnoringSafeArea(.vertical)
                         .transition(.scale)
                     }
-                Spacer()
                 
                 // Loading
                 if viewModel.isLoading {
@@ -88,6 +87,8 @@ struct ImageView: View {
                         }
                     }
                 }
+                
+                Spacer()
                 
                 // Control Buttons
                 HStack {
