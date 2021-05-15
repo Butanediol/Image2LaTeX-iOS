@@ -34,7 +34,7 @@ struct ConfidenceBar: View {
                     .foregroundColor(color)
                 HStack {
                     Spacer()
-                    Text("Confidence: \(Int(confidence * 100))%")
+                    Text("Confidence: ") + Text(String.init(format: "%.2f%%", confidence * 100))
                     Spacer()
                 }
             }

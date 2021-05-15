@@ -123,3 +123,8 @@
 
 
 "Developer" = "开发者";
+
+/* MARK: - ConfidenceBar.swift */
+
+
+"Confidence: " = "可信度：";
