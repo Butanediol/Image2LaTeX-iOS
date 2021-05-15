@@ -19,7 +19,9 @@ struct HistoryView: View {
     @State var searchText: String?
     @State private var selectedHistoryImage: HistoryImage?
     @State private var isEditing: Bool = false
-    
+    @State private var showDatePicker: Bool = false
+    @State private var selectedDate: Date = Date()
+
     var body: some View {
         
         if (historyImages.isEmpty) {
@@ -28,8 +30,15 @@ struct HistoryView: View {
         } else {
             
             List {
+                if showDatePicker {
+                    VStack {
+                        DatePicker(selection: $selectedDate, in: ...Date(), displayedComponents: [.date], label: { Text("Date") }).datePickerStyle(CompactDatePickerStyle())
+                    }
+                }
                 ForEach(historyImages.filter {
-                    searchText == nil ? true : DateFormatter.localizedString(from: $0.timestamp!, dateStyle: .long, timeStyle: .medium).contains(searchText!)
+                    (showDatePicker) ?
+                        (($0.timestamp! >= Calendar.current.startOfDay(for: selectedDate)) && ($0.timestamp! <= Calendar.current.startOfDay(for: selectedDate).addingTimeInterval(86400))) : true
+//                    searchText == nil ? true : DateFormatter.localizedString(from: $0.timestamp!, dateStyle: .long, timeStyle: .medium).contains(searchText!)
                 }) { image in
                     NavigationLink(destination: HistoryImageView(image: image)) {
                         HStack(alignment: .bottom) {
@@ -56,14 +65,15 @@ struct HistoryView: View {
                 
             }
             .listStyle(PlainListStyle())
-//            .navigationSearchBar {
-//                SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
-//                    .showsCancelButton(isEditing)
-//                    .onCancel {
-//                        searchText = nil
-//                    }
-//            }
-//            .navigationSearchBarHiddenWhenScrolling(true)
+            .toolbar {
+                Button(action: {
+                    withAnimation(.easeInOut) {
+                        showDatePicker.toggle()
+                    }
+                }) {
+                    Label("Select date", systemImage: showDatePicker ? "calendar.circle.fill" : "calendar.circle")
+                }
+            }
         }
     }
     
