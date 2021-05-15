@@ -25,12 +25,11 @@ struct HistoryView: View {
         if (historyImages.isEmpty) {
             Text("No history")
                 .foregroundColor(.secondary)
-//                .hideNavigationBar()
         } else {
             
             List {
                 ForEach(historyImages.filter {
-                    searchText == nil ? true : dateFormatter.string(from: $0.timestamp ?? Date()).contains(searchText!)
+                    searchText == nil ? true : DateFormatter.localizedString(from: $0.timestamp!, dateStyle: .long, timeStyle: .medium).contains(searchText!)
                 }) { image in
                     NavigationLink(destination: HistoryImageView(image: image)) {
                         HStack(alignment: .bottom) {
@@ -46,7 +45,7 @@ struct HistoryView: View {
                                 )
                             
                             VStack(alignment: .leading) {
-                                Text(dateFormatter.string(from: image.timestamp!))
+                                Text(DateFormatter.localizedString(from: image.timestamp!, dateStyle: .long, timeStyle: .medium))
                                 HistoryImageBadgeRow(image: image)
                             }
                             .padding(.horizontal)
@@ -57,14 +56,14 @@ struct HistoryView: View {
                 
             }
             .listStyle(PlainListStyle())
-            .navigationSearchBar {
-                SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
-                    .showsCancelButton(isEditing)
-                    .onCancel {
-                        searchText = nil
-                    }
-            }
-            .navigationSearchBarHiddenWhenScrolling(true)
+//            .navigationSearchBar {
+//                SearchBar("Search history...", text: $searchText, isEditing: $isEditing)
+//                    .showsCancelButton(isEditing)
+//                    .onCancel {
+//                        searchText = nil
+//                    }
+//            }
+//            .navigationSearchBarHiddenWhenScrolling(true)
         }
     }
     
@@ -116,10 +115,3 @@ struct HistoryImageBadgeRow: View {
     }
     
 }
-
-let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()

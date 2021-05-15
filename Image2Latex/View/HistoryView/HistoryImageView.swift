@@ -44,7 +44,7 @@ struct HistoryImageView: View {
             .padding()
         }
         .fixFlickering()
-        .navigationBarTitle(dateFormatter.string(from: image.timestamp ?? Date()), displayMode: .inline)
+        .navigationBarTitle(DateFormatter.localizedString(from: image.timestamp!, dateStyle: .long, timeStyle: .medium), displayMode: .inline)
     }
     
     private func deleteAfter() {

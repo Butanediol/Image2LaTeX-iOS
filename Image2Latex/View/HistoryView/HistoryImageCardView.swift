@@ -30,7 +30,7 @@ struct HistoryImageCardView: View {
                             .fontWeight(.black)
                             .foregroundColor(.primary)
                             .lineLimit(3)
-                        Text("\(dateFormatter.string(from: image.timestamp!))".uppercased())
+                        Text("\(DateFormatter.localizedString(from: image.timestamp!, dateStyle: .long, timeStyle: .medium))".uppercased())
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
